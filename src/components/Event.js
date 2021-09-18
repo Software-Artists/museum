@@ -3,16 +3,17 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 export class Event extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     data: [],
+  //   };
+  // }
   render() {
+    console.log(this.props);
     return (
       <div>
-        {this.state.data.map((value) => {
+        {this.props.museumData.splice(0, 5).map((value) => {
           return (
             <div>
               <Card style={{ width: "100%" }}>
