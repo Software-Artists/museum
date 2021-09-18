@@ -19,13 +19,11 @@ class Header extends React.Component {
             <Nav className="me-auto">
               <Nav.Link href="#Collection" style={{ paddingLeft: "250px" }}>Collection</Nav.Link>
               <Nav.Link href="#Event" style={{ paddingLeft: "50px" }}>Event</Nav.Link>
-              <NavDropdown title="Profile" id="collasible-nav-dropdown" style={{ paddingLeft: "50px" }}>
-                <NavDropdown.Item href="#logIn" >log in</NavDropdown.Item>
-                <NavDropdown.Item href="#logOut">
-                  log out
-                </NavDropdown.Item>
+              <Nav.Link href="#Profile" style={{ paddingLeft: "50px" }}>Profile</Nav.Link>
+              
+                
+                
 
-              </NavDropdown>
               <NavDropdown title="About us" id="collasible-nav-dropdown" style={{ paddingLeft: "50px" }}>
                 <NavDropdown.Item href="#about">About team</NavDropdown.Item>
                 <NavDropdown.Item href="#feedback">
