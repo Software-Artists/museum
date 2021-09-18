@@ -1,38 +1,38 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-
+// import Event from "./Event";
 export class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      museumData: [],
-      paintingsData: [],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     museumData: [],
+  //     paintingsData: [],
+  //   };
+  // }
 
-  componentDidMount = () => {
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
-      .then((museumResponse) => {
-        this.setState({ museumData: museumResponse.data });
-      });
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/paintings`)
-      .then((paintingsResponse) => {
-        this.setState({ paintingsData: paintingsResponse.data });
-      });
-  };
+  // componentDidMount = () => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
+  //     .then((museumResponse) => {
+  //       this.setState({ museumData: museumResponse.data });
+  //     });
+  //   axios
+  //     .get(`${process.env.REACT_APP_SERVER_URL}/paintings`)
+  //     .then((paintingsResponse) => {
+  //       this.setState({ paintingsData: paintingsResponse.data });
+  //     });
+  // };
 
   render() {
-    console.log(this.state.museumData);
+    
     return (
       <>
         <div class="d-flex justify-content-center">
           <Carousel fade className="d-block w-75">
-            {this.state.museumData.map((element) => {
+            {this.props.museumData.map((element) => {
               return (
                 <Carousel.Item interval={1500}>
                   <img
@@ -51,7 +51,7 @@ export class Main extends Component {
         </div>
         <div>
           <Row xs={1} md={4} className="g-4">
-            {this.state.paintingsData.splice(0,2).map((element) => {
+            {this.props.paintingsData.splice(0, 2).map((element) => {
               return (
                 <Card
                   style={{
@@ -63,7 +63,6 @@ export class Main extends Component {
                   <Card.Body
                     style={{
                       color: "black",
-                      
                     }}
                   >
                     <Card.Img
@@ -77,6 +76,7 @@ export class Main extends Component {
               );
             })}
           </Row>
+          {/* <Event museumData={this.state.museumData} /> */}
         </div>
       </>
     );
