@@ -32,7 +32,7 @@ export class Main extends Component {
       <>
         <div class="d-flex justify-content-center">
           <Carousel fade className="d-block w-75">
-            {this.props.museumData.map((element) => {
+            {this.props.museumData.splice(0, 7).map((element) => {
               return (
                 <Carousel.Item interval={1500}>
                   <img
@@ -51,7 +51,7 @@ export class Main extends Component {
         </div>
         <div>
           <Row xs={1} md={4} className="g-4">
-            {this.props.paintingsData.splice(0, 2).map((element) => {
+            {this.props.paintingsData.map((element) => {
               return (
                 <Card
                   style={{
@@ -67,10 +67,10 @@ export class Main extends Component {
                   >
                     <Card.Img
                       variant="top"
-                      src={element.art_image1}
+                      src={`https://www.artic.edu/iiif/2/${element.image_id}/full/843,/0/default.jpg`}
                       alt={element.description_image1}
                     />
-                    <Card.Title>{element.description_image1}</Card.Title>
+                    <Card.Title>{element.artist_display}</Card.Title>
                   </Card.Body>
                 </Card>
               );
