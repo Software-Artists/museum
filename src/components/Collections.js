@@ -17,13 +17,14 @@ export class Collections extends Component {
       selectedData: [],
       show: false,
       selectedID: "",
+      selectedModal: {},
     };
   }
 
   componentDidMount = async () => {
     const serverUrl = "http://localhost:3020/paintings";
     const serverResponse = await axios.get(serverUrl);
-    console.log(serverResponse.data);
+    // console.log(serverResponse.data);
     this.setState({
       museumData: serverResponse.data,
       filterMuseumData: serverResponse.data,
@@ -35,7 +36,7 @@ export class Collections extends Component {
     let filteredArray;
 
     filteredArray = this.state.museumData.filter((element) => {
-      if (element.name === value) {
+      if (element.id === value) {
         return value;
       } else if (value === "0") {
         return this.state.museumData;
@@ -54,12 +55,28 @@ export class Collections extends Component {
       show: true,
       selectedData: data,
     });
+    // console.log("333333333333", this.state.filterMuseumData);
   };
 
-  handelClick = (e) => {
-    this.handleShow(this.selectedData);
+  handelClick = async (e) => {
+    // let x1 = `https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`;
+    console.log("11111111111111", e.target);
+    await this.handleShow(this.state.selectedData);
+    await this.setState({
+      selectedID: e.target.src,
+    });
+    let selectedItem = [];
+
+    selectedItem = this.state.filterMuseumData.find(
+      (value) =>
+        `https://www.artic.edu/iiif/2/${value.image_id}/full/843,/0/default.jpg` ===
+        this.state.selectedID
+    );
+    // console.log("2222222222222", this.state.filterMuseumData);
+    // console.log("111111111111111111", selectedItem);
+
     this.setState({
-      selectedID: e.target.id.value,
+      selectedModal: selectedItem,
     });
   };
 
@@ -85,8 +102,28 @@ export class Collections extends Component {
             <Form.Control as="select" onChange={this.filterMuseum}>
               <option value="0"> select museum name </option>
               <option value="Louvre"> Louvre Museum </option>
-              <option value="The Egyptian Museum"> The Egyptian Museum </option>
-              <option value="Metropolitan Museum of art">
+              <option value="THE_PRADO"> THE_PRADO </option>
+              <option
+                value="THE_VATICAN_MUSEUMS
+"
+              >
+                {" "}
+                THE_VATICAN_MUSEUMS{" "}
+              </option>
+              <option value="THE_STATE_HERMITAGE_MUSEUM">
+                {" "}
+                THE_STATE_HERMITAGE_MUSEUM{" "}
+              </option>
+              <option value="THE_UFFIZI_GALLERIES">
+                {" "}
+                THE_UFFIZI_GALLERIES{" "}
+              </option>
+              <option value="THE_UFFIZI_GALLERIES">
+                {" "}
+                THE_UFFIZI_GALLERIES{" "}
+              </option>
+              <option value="THE_PRADO"> THE_PRADO </option>
+              <option value="Metropolitan_Museum_of_art">
                 {" "}
                 Metropolitan Museum of art{" "}
               </option>
@@ -100,7 +137,7 @@ export class Collections extends Component {
                 <Card style={{ width: "25rem" }}>
                   <Card.Img
                     variant="top"
-                    src={item.art_image1}
+                    src={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
                     alt="paint image"
                     onClick={this.handelClick}
                     id="image"
@@ -118,6 +155,7 @@ export class Collections extends Component {
                   handleClose={this.handleClose}
                   selectedData={this.state.filterMuseumData}
                   selectedID={this.state.selectedID}
+                  selectedModal={this.state.selectedModal}
                 />
               </div>
             );
