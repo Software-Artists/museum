@@ -13,7 +13,7 @@ export class Event extends Component {
     console.log(this.props);
     return (
       <div>
-        {this.props.museumData.splice(0, 5).map((value) => {
+        {this.props.museumData.slice(0,7).map((value) => {
           return (
             <div>
               <Card style={{ width: "100%" }}>
