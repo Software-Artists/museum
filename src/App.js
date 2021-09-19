@@ -2,7 +2,7 @@ import React from "react";
 import Main from "./components/Main";
 // import logo from './logo.svg';
 import "./App.css";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Collections from "./components/Collections";
@@ -11,6 +11,7 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
+import TestHeader from "./components/TestHeader";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.state = {
       museumData: [],
       paintingsData: [],
+      passingData: [],
     };
   }
 
@@ -33,11 +35,18 @@ class App extends React.Component {
         this.setState({ paintingsData: paintingsResponse.data });
       });
   };
+
+  handelPassingFav = (test) => {
+    this.setState({
+      passingData: test,
+    });
+    // console.log("AAAPPPJJSS", this.state.passingData);
+  };
   render() {
     return (
       <div className="App">
         <Router>
-          <Header />
+          <TestHeader />
           <Switch>
             <Route exact path="/">
               <Main
@@ -46,7 +55,7 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/profile">
-              <Profile />
+              <Profile selectedData={this.state.passingData} />
             </Route>
             <Route exact path="/Event">
               <Event
@@ -55,7 +64,7 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/Collections">
-              <Collections />
+              <Collections handelPassingFav={this.handelPassingFav} />
             </Route>
             <Route exact path="/Aboutus">
               <Aboutus />

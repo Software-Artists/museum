@@ -106,9 +106,9 @@ export class Collections extends Component {
     this.setState({
       addToFavorite: this.state.allFilteredFavArray,
     });
-  };
 
-  
+    this.props.handelPassingFav(this.state.addToFavorite);
+  };
 
   // ********************************************************************
 
