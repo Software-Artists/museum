@@ -24,9 +24,9 @@ class SelectedPaintings extends React.Component {
     // this.setState({
     //   array: selectedItem,
     // });
-    console.log("ddddddddddddd");
-    console.log(this.props);
-    console.log("ddddddddddddd");
+    // console.log("ddddddddddddd");
+    // console.log(this.props);
+    // console.log("ddddddddddddd");
     return (
       <div>
         {/* {this.props.selectedData.find(value) => {
@@ -41,9 +41,12 @@ class SelectedPaintings extends React.Component {
               <Modal.Title>{this.props.selectedModal.name}</Modal.Title>
             </Modal.Header>
 
-            <Card.Img variant="top" src={this.props.selectedModal.art_image1} />
+            <Card.Img
+              variant="top"
+              src={`https://www.artic.edu/iiif/2/${this.props.selectedModal.image_id}/full/843,/0/default.jpg`}
+            />
 
-            <Modal.Body>{this.props.selectedModal.description}</Modal.Body>
+            <Modal.Body>{this.props.selectedModal.artist_display}</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={this.props.handleClose}>
                 Close

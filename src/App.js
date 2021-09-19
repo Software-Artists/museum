@@ -34,7 +34,6 @@ class App extends React.Component {
       });
   };
   render() {
-    console.log(this.state.museumData);
     return (
       <div className="App">
         <Router>
