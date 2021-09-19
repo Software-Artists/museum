@@ -1,13 +1,52 @@
-import React, { Component } from 'react'
+import React from "react";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+// import { Link } from "react-router-dom";
+import "../Style/header.css";
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import NavLink from "react-bootstrap/NavLink";
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import { withAuth0 } from "@auth0/auth0-react";
 
-export class Header extends Component {
-    render() {
-        return (
-            <div>
+class Header extends React.Component {
+  render() {
+    const isAuth = this.props.auth0.isAuthenticated;
+    return (
+      <>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home">Home</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="#Collection" style={{ paddingLeft: "250px" }}>Collection</Nav.Link>
+              <Nav.Link href="#Event" style={{ paddingLeft: "50px" }}>Event</Nav.Link>
+              <Nav.Link href="#Profile" style={{ paddingLeft: "50px" }}>Profile</Nav.Link>
+              
                 
-            </div>
-        )
-    }
+                
+
+              <NavDropdown title="About us" id="collasible-nav-dropdown" style={{ paddingLeft: "50px" }}>
+                <NavDropdown.Item href="#about">About team</NavDropdown.Item>
+                <NavDropdown.Item href="#feedback">
+                  feedback
+                </NavDropdown.Item>
+
+              </NavDropdown>
+            </Nav>
+          </Container>
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+
+            {isAuth && <NavItem style={{ paddingLeft: "1%" }} >  <Link to="/profile">Profile  </Link></NavItem>}
+
+
+            {isAuth ? <LogoutButton /> : <LoginButton />}
+          </Navbar>
+
+        </Navbar>
+
+        <br />
+      </>
+    );
+  }
 }
 
-export default Header
+export default withAuth0(Header);
