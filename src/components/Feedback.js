@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Card from "react-bootstrap/Card";
 import FeedbackForm from "./feedbackForm";
 
 class FeedBackPage extends React.Component {
@@ -13,9 +13,11 @@ class FeedBackPage extends React.Component {
   }
   //========================= this function calls the render fun. first then excutes.
   componentDidMount = () => {
-    axios.get(`${process.env.MONGO_URL}/feedback`).then((feedBackResponse) => {
-      this.setState({ feedbacks: feedBackResponse.data });
-    });
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/feedback`)
+      .then((feedBackResponse) => {
+        this.setState({ feedbacks: feedBackResponse.data });
+      });
   };
 
   //================== Form Submit:====================================
@@ -26,7 +28,7 @@ class FeedBackPage extends React.Component {
       feedBackMessage: e.target.feedback.value,
     };
     axios
-      .post(`${process.env.MONGO_URL}/feedback`, requestBody)
+      .post(`${process.env.REACT_APP_SERVER_URL}/feedback`, requestBody)
       .then((feedBackResponse) => {
         this.state.feedbacks.push(feedBackResponse.data); // to prevent data lose.
         this.setState({
@@ -38,9 +40,9 @@ class FeedBackPage extends React.Component {
   render() {
     return (
       <div>
+        {/* <h1>Test</h1> */}
         <FeedbackForm formSubmit={this.formSubmit} />
 
-        {/* <h1>Test</h1> */}
         {this.state.feedbacks.length > 0 && (
           <>
             {this.state.feedbacks.map((feedback) => {
@@ -52,7 +54,6 @@ class FeedBackPage extends React.Component {
                       <Card.Text> {feedback.feedBackMessage} </Card.Text>
                     </Card.Body>
                   </Card>
-                  );
                 </>
               );
             })}
