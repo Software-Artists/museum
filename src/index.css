@@ -30,7 +30,7 @@ code {
 
 #paintingDiv #image {
   height: 400px;
-  border: 10px solid rgb(204, 204, 204); /* Gray border */
+  border: 10px solid #a98960; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box;
   opacity: 0.9;
@@ -43,7 +43,7 @@ code {
 }
 
 #formDiv {
-  border: 10px solid rgb(87, 126, 235); /* Gray border */
+  border: 10px solid #a98960; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box;
   width: 650px;
