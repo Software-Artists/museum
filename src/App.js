@@ -3,7 +3,7 @@ import Main from "./components/Main";
 // import logo from './logo.svg';
 import "./App.css";
 // import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Collections from "./components/Collections";
 import Profile from "./components/Profile";
@@ -12,7 +12,7 @@ import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
 import TestHeader from "./components/TestHeader";
-
+import TestFooter from "./components/TestFooter";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -73,7 +73,7 @@ class App extends React.Component {
               <Feedback />
             </Route>
           </Switch>
-          <Footer />
+          <TestFooter />
         </Router>
       </div>
     );

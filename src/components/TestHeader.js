@@ -24,7 +24,13 @@ export class TestHeader extends Component {
               <li>
                 <a href="/Event">Event</a>
               </li>
-              <li class="dropdown">
+              <li>
+                <a href="/Aboutus">About us</a>
+              </li>
+              <li>
+                <a href="/Feedback">Feedback</a>
+              </li>
+              {/* <li class="dropdown">
                 <a href="/Aboutus" class="dropbtn">
                   About us
                 </a>
@@ -37,7 +43,7 @@ export class TestHeader extends Component {
                     Feedback
                   </a>
                 </div>
-              </li>
+              </li> */}
               <li>
                 <a href="/profile">profile</a>
               </li>
