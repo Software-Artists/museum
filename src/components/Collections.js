@@ -17,6 +17,7 @@ export class Collections extends Component {
       selectedData: [],
       show: false,
       selectedID: "",
+      selectedModal: {},
     };
   }
 
@@ -54,12 +55,23 @@ export class Collections extends Component {
       show: true,
       selectedData: data,
     });
+    console.log("333333333333", this.state.filterMuseumData);
   };
 
-  handelClick = (e) => {
-    this.handleShow(this.selectedData);
+  handelClick = async (e) => {
+    await this.handleShow(this.state.selectedData);
+    await this.setState({
+      selectedID: e.target.src,
+    });
+    let selectedItem = [];
+    selectedItem = this.state.filterMuseumData.find(
+      (value) => value.art_image1 === this.state.selectedID
+    );
+    console.log("2222222222222", this.state.filterMuseumData);
+    console.log("111111111111111111", selectedItem);
+
     this.setState({
-      selectedID: e.target.id.value,
+      selectedModal: selectedItem,
     });
   };
 
@@ -118,6 +130,7 @@ export class Collections extends Component {
                   handleClose={this.handleClose}
                   selectedData={this.state.filterMuseumData}
                   selectedID={this.state.selectedID}
+                  selectedModal={this.state.selectedModal}
                 />
               </div>
             );
