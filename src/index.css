@@ -54,3 +54,7 @@ code {
 #formDiv:hover {
   background-color: rgb(153, 178, 194);
 }
+
+#footerDiv {
+  clear: both;
+}

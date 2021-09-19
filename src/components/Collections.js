@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import "../index.css";
 import Form from "react-bootstrap/Form";
 import SelectedPaintings from "./SelectedPaintings";
+import Button from "react-bootstrap/Button";
 
 export class Collections extends Component {
   constructor(props) {
@@ -18,6 +19,9 @@ export class Collections extends Component {
       show: false,
       selectedID: "",
       selectedModal: {},
+      addToFavorite: [],
+      favItem: "",
+      allFilteredFavArray: [],
     };
   }
 
@@ -60,7 +64,7 @@ export class Collections extends Component {
 
   handelClick = async (e) => {
     // let x1 = `https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`;
-    console.log("11111111111111", e.target);
+    // console.log("11111111111111", e.target);
     await this.handleShow(this.state.selectedData);
     await this.setState({
       selectedID: e.target.src,
@@ -79,6 +83,32 @@ export class Collections extends Component {
       selectedModal: selectedItem,
     });
   };
+
+  addingToFav = async (e) => {
+    // console.log("addingToFav", e.target);
+    // let favItem = e.target.name;
+    let filteredFavArray = [];
+    await this.setState({
+      favItem: e.target.name,
+    });
+
+    filteredFavArray = this.state.filterMuseumData.find(
+      (value) =>
+        `https://www.artic.edu/iiif/2/${value.image_id}/full/843,/0/default.jpg` ===
+        this.state.favItem
+    );
+
+    this.state.allFilteredFavArray.push(filteredFavArray);
+
+    // console.log("alllllllllllll", this.state.allFilteredFavArray);
+
+    // console.log(filteredFavArray);
+    this.setState({
+      addToFavorite: this.state.allFilteredFavArray,
+    });
+  };
+
+  
 
   // ********************************************************************
 
@@ -103,13 +133,7 @@ export class Collections extends Component {
               <option value="0"> select museum name </option>
               <option value="Louvre"> Louvre Museum </option>
               <option value="THE_PRADO"> THE_PRADO </option>
-              <option
-                value="THE_VATICAN_MUSEUMS
-"
-              >
-                {" "}
-                THE_VATICAN_MUSEUMS{" "}
-              </option>
+              <option value="THE_VATICAN_MUSEUMS"> THE_VATICAN_MUSEUMS </option>
               <option value="THE_STATE_HERMITAGE_MUSEUM">
                 {" "}
                 THE_STATE_HERMITAGE_MUSEUM{" "}
@@ -142,13 +166,17 @@ export class Collections extends Component {
                     onClick={this.handelClick}
                     id="image"
                   />
-                  {/* <Card.Body>
-                    <Card.Title>Museum Name: {item.name}</Card.Title>
-                    <Card.Text>Museum Location: {item.location}</Card.Text>
-                    <Card.Text>
-                      Museum Description: {item.description}
-                    </Card.Text>
-                  </Card.Body> */}
+                  <Card.Body>
+                    <Card.Title> {item.name}</Card.Title>
+                    <Card.Text> {item.location}</Card.Text>
+                    <Button
+                      onClick={this.addingToFav}
+                      name={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
+                    >
+                      {" "}
+                      Add to Favorite ❤️
+                    </Button>
+                  </Card.Body>
                 </Card>
                 <SelectedPaintings
                   show={this.state.show}
