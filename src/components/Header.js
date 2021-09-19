@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../Style/header.css";
 // import ButtonGroup from 'react-bootstrap/ButtonGroup';
 // import NavLink from "react-bootstrap/NavLink";
@@ -15,32 +15,47 @@ class Header extends React.Component {
       <>
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Home</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="#Collection" style={{ paddingLeft: "250px" }}>Collection</Nav.Link>
-              <Nav.Link href="#Event" style={{ paddingLeft: "50px" }}>Event</Nav.Link>
-              <Nav.Link href="#Profile" style={{ paddingLeft: "50px" }}>Profile</Nav.Link>
-              
-                
-                
-
-              <NavDropdown title="About us" id="collasible-nav-dropdown" style={{ paddingLeft: "50px" }}>
-                <NavDropdown.Item href="#about">About team</NavDropdown.Item>
-                <NavDropdown.Item href="#feedback">
-                  feedback
-                </NavDropdown.Item>
-
-              </NavDropdown>
+            <Navbar.Brand>
+              {" "}
+              <Link to="/">Home</Link>
+            </Navbar.Brand>
+            <Nav variant="pills">
+              <NavItem>
+                {" "}
+                <Link to="/">Home</Link>{" "}
+              </NavItem>
+              <NavItem>
+                {" "}
+                <Link to="/Collections">Collections</Link>{" "}
+              </NavItem>
+              <NavItem>
+                {" "}
+                <Link to="/Event">Event</Link>{" "}
+              </NavItem>
+              <NavItem>
+                {" "}
+                <Link to="/profile">profile</Link>{" "}
+              </NavItem>
+              <NavItem>
+                {" "}
+                <Link to="/Aboutus">Aboutus</Link>{" "}
+              </NavItem>
+              <NavItem>
+                {" "}
+                <Link to="/Feedback">Feedback</Link>{" "}
+              </NavItem>
             </Nav>
           </Container>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
-
-            {isAuth && <NavItem style={{ paddingLeft: "1%" }} >  <Link to="/profile">Profile  </Link></NavItem>}
-
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            {isAuth && (
+              <NavItem style={{ paddingLeft: "1%" }}>
+                {" "}
+                <Link to="/profile">Profile </Link>
+              </NavItem>
+            )}
 
             {isAuth ? <LogoutButton /> : <LoginButton />}
           </Navbar>
-
         </Navbar>
 
         <br />
