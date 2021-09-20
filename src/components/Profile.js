@@ -1,8 +1,5 @@
-import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
-
+// import React from "react";
 // import { useAuth0 } from "@auth0/auth0-react";
-// import { render } from "@testing-library/react";
 
 // const Profile = () => {
 //   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -11,7 +8,6 @@ import Card from "react-bootstrap/Card";
 //     return <div>Loading ...</div>;
 //   }
 
-//   console.log(this.props.data);
 //   return (
 //     isAuthenticated && (
 //       <div>
@@ -21,46 +17,61 @@ import Card from "react-bootstrap/Card";
 //       </div>
 //     )
 //   );
-
 // };
+
+// export default Profile;
+
+import React, { Component } from "react";
+import Card from "react-bootstrap/Card";
+
 export class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedModal: [],
-      selectedItem: [],
-      
-    };
-  }
- 
   render() {
-    console.log(this.props.data,'DDDDDDDDDDDDDDDDD');
-
-    // console.log(this.state.data);
-    console.log(this.props.museumData,'ddddddddddd');
-
+    console.log(this.props);
+    console.log("pppppppppppppp", this.props.selectedData);
     return (
       <div>
-        {/* {
-          this.state.selectedItem = this.state.museumData.find(
-            (value) => this.props.data === value.id
-          )
-        } */}
-
-        <Card style={{ width: "100%" }}>
-          <Card.Img
-            variant="top"
-            src={this.state.selectedItem.event_description_image}
-          />
-          <Card.Body>
-            <Card.Title>{this.state.selectedItem.name}</Card.Title>
-            <Card.Text>{this.state.selectedItem.event_description}</Card.Text>
-            <Card.Title>{this.state.selectedItem.ticket_price}</Card.Title>
-          </Card.Body>
-        </Card>
+        <div>
+          <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
+          {this.props.selectedData.map((item) => {
+            return (
+              <div>
+                <div id="profileDiv">
+                  <Card style={{ width: "25rem" }}>
+                    <Card.Img
+                      variant="top"
+                      src={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
+                      alt="paint image"
+                      id="profilePaintingImage"
+                    />
+                    <Card.Body>
+                      <Card.Title> {item.name}</Card.Title>
+                      <Card.Text> {item.location}</Card.Text>
+                      <Card.Text> {item.title}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          {this.props.data.map((value) => {
+            return (
+              <div>
+                <Card style={{ width: "100%" }}>
+                  <Card.Img variant="top" src={value.event_description_image} />
+                  <Card.Body>
+                    <Card.Title>{value.name}</Card.Title>
+                    <Card.Text>{value.event_description}</Card.Text>
+                    <Card.Title>{value.ticket_price}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
 }
-
 export default Profile;

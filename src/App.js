@@ -3,7 +3,7 @@ import Main from "./components/Main";
 // import logo from './logo.svg';
 import "./App.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Collections from "./components/Collections";
 import Profile from "./components/Profile";
@@ -11,7 +11,8 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
-
+// import TestHeader from "./components/TestHeader";
+import TestFooter from "./components/TestFooter";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,13 +20,15 @@ class App extends React.Component {
       museumData: [],
       paintingsData: [],
       mus: [],
-      data: '',
+      data: [],
+      passingData: [],
+     
     };
   }
-  handel = (x) => {
+  handel =  (x) => {
     this.setState({ data: x });
     console.log(x);
-    console.log(this.state.data);
+    console.log(this.state.data,'app.js data');
   };
   componentDidMount = () => {
     axios
@@ -39,8 +42,15 @@ class App extends React.Component {
         this.setState({ paintingsData: paintingsResponse.data });
       });
   };
-  render() {
     
+
+  handelPassingFav = (test) => {
+    this.setState({
+      passingData: test,
+    });
+    console.log("AAAPPPJJSS", this.state.passingData);
+  };
+  render() {
     return (
       <div className="App">
         <Router>
@@ -53,10 +63,7 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/profile">
-              <Profile
-                data={this.state.data}
-                museumData={this.state.museumData}
-              />
+              <Profile selectedData={this.state.passingData} data={this.state.data} />
             </Route>
             <Route exact path="/Event">
               <Event
@@ -66,7 +73,7 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/Collections">
-              <Collections />
+              <Collections handelPassingFav={this.handelPassingFav} />
             </Route>
             <Route exact path="/Aboutus">
               <Aboutus />
@@ -75,7 +82,7 @@ class App extends React.Component {
               <Feedback />
             </Route>
           </Switch>
-          <Footer />
+          <TestFooter />
         </Router>
       </div>
     );
