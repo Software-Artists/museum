@@ -100,7 +100,7 @@ export class Collections extends Component {
 
     this.state.allFilteredFavArray.push(filteredFavArray);
 
-    // console.log("alllllllllllll", this.state.allFilteredFavArray);
+    console.log("alllllllllllll", this.state.allFilteredFavArray);
 
     // console.log(filteredFavArray);
     this.setState({

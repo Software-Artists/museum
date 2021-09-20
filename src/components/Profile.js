@@ -27,6 +27,7 @@ import Card from "react-bootstrap/Card";
 export class Profile extends Component {
   render() {
     console.log(this.props);
+    console.log("pppppppppppppp", this.props.selectedData);
     return (
       <div>
         <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>

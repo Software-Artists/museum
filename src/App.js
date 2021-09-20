@@ -2,7 +2,7 @@ import React from "react";
 import Main from "./components/Main";
 // import logo from './logo.svg';
 import "./App.css";
-// import Header from "./components/Header";
+import Header from "./components/Header";
 // import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Collections from "./components/Collections";
@@ -11,7 +11,7 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
-import TestHeader from "./components/TestHeader";
+// import TestHeader from "./components/TestHeader";
 import TestFooter from "./components/TestFooter";
 class App extends React.Component {
   constructor(props) {
@@ -40,13 +40,13 @@ class App extends React.Component {
     this.setState({
       passingData: test,
     });
-    // console.log("AAAPPPJJSS", this.state.passingData);
+    console.log("AAAPPPJJSS", this.state.passingData);
   };
   render() {
     return (
       <div className="App">
         <Router>
-          <TestHeader />
+          <Header />
           <Switch>
             <Route exact path="/">
               <Main
