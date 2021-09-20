@@ -82,6 +82,7 @@ export class Collections extends Component {
     this.setState({
       selectedModal: selectedItem,
     });
+        
   };
 
   addingToFav = async (e) => {

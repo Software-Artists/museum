@@ -13,22 +13,29 @@ import Feedback from "./components/Feedback";
 import axios from "axios";
 import TestHeader from "./components/TestHeader";
 import TestFooter from "./components/TestFooter";
+// import Loader from './components/Loader';
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       museumData: [],
       paintingsData: [],
-      passingData: [],
       mus: [],
+      data: [],
+      passingData: [],
+      loader: true,
     };
   }
-
+  handel = (x) => {
+    this.setState({ data: x });
+    console.log(x);
+    console.log(this.state.data, "app.js data");
+  };
   componentDidMount = () => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
       .then((museumResponse) => {
-        this.setState({ museumData: museumResponse.data });
+        this.setState({ museumData: museumResponse.data, loader: false });
       });
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/paintings`)
@@ -53,15 +60,20 @@ class App extends React.Component {
               <Main
                 museumData={this.state.museumData}
                 paintingsData={this.state.paintingsData}
+                loader={this.state.loader}
               />
             </Route>
             <Route exact path="/profile">
-              <Profile selectedData={this.state.passingData} />
+              <Profile
+                selectedData={this.state.passingData}
+                data={this.state.data}
+              />
             </Route>
             <Route exact path="/Event">
               <Event
                 museumData={this.state.museumData}
                 paintingsData={this.state.paintingsData}
+                handel={this.handel}
               />
             </Route>
             <Route exact path="/Collections">

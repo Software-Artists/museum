@@ -13,7 +13,7 @@ class Header extends React.Component {
     const isAuth = this.props.auth0.isAuthenticated;
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" fixed="top">
           <Container>
             <Navbar.Brand>
               {" "}
