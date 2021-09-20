@@ -78,6 +78,7 @@ export class Collections extends Component {
     this.setState({
       selectedModal: selectedItem,
     });
+        
   };
 
   // ********************************************************************
