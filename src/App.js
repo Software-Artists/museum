@@ -19,11 +19,17 @@ class App extends React.Component {
     this.state = {
       museumData: [],
       paintingsData: [],
-      passingData: [],
       mus: [],
+      data: [],
+      passingData: [],
+     
     };
   }
-
+  handel =  (x) => {
+    this.setState({ data: x });
+    console.log(x);
+    console.log(this.state.data,'app.js data');
+  };
   componentDidMount = () => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
@@ -36,6 +42,7 @@ class App extends React.Component {
         this.setState({ paintingsData: paintingsResponse.data });
       });
   };
+    
 
   handelPassingFav = (test) => {
     this.setState({
@@ -56,12 +63,13 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/profile">
-              <Profile selectedData={this.state.passingData} />
+              <Profile selectedData={this.state.passingData} data={this.state.data} />
             </Route>
             <Route exact path="/Event">
               <Event
                 museumData={this.state.museumData}
                 paintingsData={this.state.paintingsData}
+                handel={this.handel}
               />
             </Route>
             <Route exact path="/Collections">
