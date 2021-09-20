@@ -107,9 +107,9 @@ header {
 
 header #logiImage {
   position: absolute;
-  width: 71px;
+  width: 200px;
   left: 20px;
-  top: 14px;
+  top: 0px;
 }
 
 #logiText {
@@ -159,10 +159,11 @@ li.dropdown {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 100px;
+  min-width: 170px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   left: 47px;
+  font-size: 15px;
 }
 
 .dropdown-content a {
@@ -187,7 +188,9 @@ li.dropdown {
 /* ------------Header----------------- */
 
 /* ------------Footer----------------- */
-
+/* .App {
+  min-height: 500px;
+} */
 footer {
   position: relative;
   height: 150px;
@@ -200,18 +203,29 @@ footer #copyRights {
   font-size: 25px;
   color: #5e454b;
   position: absolute;
-  right: 550px;
-  bottom: 10px;
+  /* right: 450px; */
+  left: 10px;
+  bottom: 4px;
+  font-family: "Bebas Neue", cursive;
+}
+
+#contactDiv {
+  font-size: 23px;
+  color: #5e454b;
+  position: absolute;
+  left: 453px;
+  right: 400px;
+  top: 10px;
   font-family: "Bebas Neue", cursive;
 }
 
 footer h2 {
   color: #5e454b;
   position: absolute;
-  font-size: 30px;
-  right: 164px;
+  font-size: 25px;
+  right: 90px;
   font-family: "Bebas Neue", cursive;
-  top: 30px;
+  top: 60px;
 }
 
 .fa {
@@ -256,9 +270,35 @@ footer h2 {
 
 #social {
   position: absolute;
-  right: 0px;
-  bottom: 30px;
+  bottom: 14px;
   width: 400px;
+  left: 590px;
 }
 
+.signFooter {
+  color: #5e454b;
+  position: absolute;
+  right: 37px;
+  font-family: "Bebas Neue", cursive;
+  top: 100px;
+}
+.signButtonFooter {
+  color: #5e454b;
+  position: absolute;
+  right: 116px;
+  font-family: "Bebas Neue", cursive;
+  top: 100px;
+  background-color: rgb(95, 95, 241);
+}
+/* .form-item {
+}
+.form-item--text {
+}
+
+#newsletter-label {
+}
+#email {
+}
+.btn__text {
+} */
 /* ------------Footer----------------- */
