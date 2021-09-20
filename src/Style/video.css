@@ -13,7 +13,7 @@ video {
 }
 
 .overlay {
-  min-height: 100vh;
+  min-height: 98vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,4 +32,10 @@ video {
     mix-blend-mode: overlay;
     padding: 5px 15px;
     text-align: center;
+}
+
+
+.backG{
+background-color: whitesmoke;
+
 }
