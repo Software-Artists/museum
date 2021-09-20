@@ -23,7 +23,7 @@ class App extends React.Component {
       museumData: [],
       paintingsData: [],
       mus: [],
-      gender: "",
+      genderr: "",
       data: [],
       passingData: [],
       loader: true,
@@ -48,7 +48,7 @@ class App extends React.Component {
   };
   gendarHandel = (value) => {
     this.setState({
-      gender: value,
+      genderr: value,
     });
   };
 
@@ -58,7 +58,7 @@ class App extends React.Component {
     this.setState({
       passingData: test,
     });
-    console.log("AAAPPPJJSS", this.state.passingData);
+    // console.log("AAAPPPJJSS", this.state.passingData);
   };
   render() {
     return (
@@ -95,7 +95,7 @@ class App extends React.Component {
             <Route exact path="/Feedback">
               <Feedback
                 gendarHandel={this.gendarHandel}
-                gender={this.state.gender}
+                genderr={this.state.genderr}
               />
             </Route>
           </Switch>
