@@ -1,0 +1,33 @@
+.Form {
+  width: 40%;
+  margin: auto;
+  border-style: groove;
+  padding: 2%;
+}
+
+.FormLabels {
+  margin-right: 80%;
+}
+.feedBackButton {
+  margin: 2%;
+}
+
+.formDiv {
+  margin-bottom: 2%;
+}
+
+.card {
+  width: "18rem";
+  margin: "auto";
+}
+
+#cardFeedback {
+  float: left;
+  margin: auto;
+  width: 25%;
+  padding: 5px;
+}
+
+#footerId {
+  clear: both;
+}
