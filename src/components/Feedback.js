@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import FeedbackForm from "./feedbackForm";
+import "../css/feedback.css";
 
 class FeedBackPage extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ class FeedBackPage extends React.Component {
     const requestBody = {
       name: e.target.name.value,
       feedBackMessage: e.target.feedback.value,
+      gender: e.target.value,
     };
+
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/feedback`, requestBody)
       .then((feedBackResponse) => {
@@ -35,30 +38,64 @@ class FeedBackPage extends React.Component {
           feedbacks: this.state.feedbacks,
         });
       });
+
+    location.reload();
   };
 
   render() {
+    console.log("Gender :", this.props.gender);
     return (
       <div>
-        {/* <h1>Test</h1> */}
-        <FeedbackForm formSubmit={this.formSubmit} />
-
-        {this.state.feedbacks.length > 0 && (
-          <>
-            {this.state.feedbacks.map((feedback) => {
-              return (
-                <>
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Body>
-                      <Card.Title>{feedback.name}</Card.Title>
-                      <Card.Text> {feedback.feedBackMessage} </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </>
-              );
-            })}
-          </>
-        )}
+        <h2>FeedBack</h2>
+        <div className="formDiv">
+          <FeedbackForm
+            formSubmit={this.formSubmit}
+            gendarHandel={this.props.gendarHandel}
+          />
+        </div>
+        <div className="cardDiv">
+          {this.state.feedbacks.length > 0 && (
+            <>
+              {this.state.feedbacks.map((feedback) => {
+                return (
+                  <div id="cardFeedback">
+                    <Card
+                      style={{
+                        width: "18rem",
+                        height: "35rem",
+                        margin: "auto",
+                        // backgroundColor: "lightBlue",
+                      }}
+                    >
+                      {this.props.gender === "Male" ? (
+                        <Card.Img
+                          variant="top"
+                          src="https://sdmny.hunter.cuny.edu/wp-content/uploads/2017/04/male-headshot-placeholder.jpg"
+                        />
+                      ) : (
+                        <Card.Img
+                          variant="top"
+                          src="https://via.placeholder.com/120px150"
+                        />
+                      )}
+                      <Card.Body>
+                        <Card.Title
+                          style={{
+                            color: "green",
+                            borderBottom: "2px solid black",
+                          }}
+                        >
+                          {feedback.name}
+                        </Card.Title>
+                        <Card.Text> {feedback.feedBackMessage} </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })}
+            </>
+          )}
+        </div>
       </div>
     );
   }

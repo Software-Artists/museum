@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
+import "../css/feedback.css";
+
 export class Footer extends Component {
   render() {
     return (

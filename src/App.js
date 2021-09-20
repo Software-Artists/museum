@@ -11,6 +11,8 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
+// import FeedbackForm from "./components/feedbackForm";
+
 import TestHeader from "./components/TestHeader";
 import TestFooter from "./components/TestFooter";
 // import Loader from './components/Loader';
@@ -21,6 +23,7 @@ class App extends React.Component {
       museumData: [],
       paintingsData: [],
       mus: [],
+      gender: "",
       data: [],
       passingData: [],
       loader: true,
@@ -43,6 +46,13 @@ class App extends React.Component {
         this.setState({ paintingsData: paintingsResponse.data });
       });
   };
+  gendarHandel = (value) => {
+    this.setState({
+      gender: value,
+    });
+  };
+
+  // console.log(this.state.museumData);
 
   handelPassingFav = (test) => {
     this.setState({
@@ -83,7 +93,10 @@ class App extends React.Component {
               <Aboutus />
             </Route>
             <Route exact path="/Feedback">
-              <Feedback />
+              <Feedback
+                gendarHandel={this.gendarHandel}
+                gender={this.state.gender}
+              />
             </Route>
           </Switch>
           <TestFooter />
