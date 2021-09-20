@@ -1,0 +1,25 @@
+#paintingHomeDiv .card {
+    width: 800px;
+
+  margin: 20px;
+  margin-left: 70px;
+}
+
+
+
+#paintingHomeDiv #imageHome {
+    height: 420px;
+    width: 300px;
+    border: 10px solid #a98960;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity: 0.9;
+  }
+  
+  #paintingHomeDiv #image:hover {
+    height: 400px;
+    width: 400px;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+    opacity: 1;
+    transition: all 0.3s ease-in;
+  }

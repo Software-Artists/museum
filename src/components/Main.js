@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import intro from "../components/vid/intro.mp4";
-import ReactPlayer from "react-player";
+// import intro from "../components/vid/intro.mp4";
+// import ReactPlayer from "react-player";
 import "../Style/video.css";
 import Loader from "./Loader";
+import "../Style/home.css";
 
 export class Main extends Component {
   constructor(props) {
@@ -22,24 +23,6 @@ export class Main extends Component {
           <Loader />
         ) : (
           <>
-            <div className="player-wrapper">
-              <ReactPlayer
-                playing
-                url={intro}
-                height="100%"
-                width="100%"
-                muted="false"
-                loop="true"
-              />
-
-              <div class="overlay">
-                {/* <h2></h2> */}
-                <h2>
-                  Liza Museum Arts <br /> Enjoy Seeing The Most Famous Museums
-                  Around The World
-                </h2>
-              </div>
-            </div>
             <section className="backG">
               <div class="d-flex justify-content-center">
                 <Carousel fade className="d-block w-75">
@@ -68,29 +51,31 @@ export class Main extends Component {
                 marginTop: "50px",
               }}
             >
-              <Row xs={1} md={5} className="g-4">
-                {this.props.paintingsData.slice(0, 70).map((element) => {
+              <Row xs={1} md={3} className="g-4">
+                {this.props.paintingsData.slice(0, 25).map((element) => {
                   return (
-                    <Card
-                      style={{
-                        width: "18rem",
-                        border: "solid",
-                        margin: "20px",
-                      }}
-                    >
-                      <Card.Body
+                    <div id="paintingHomeDiv">
+                      <Card
                         style={{
-                          color: "black",
+                          width: "22rem",
+                         
+                          margin: "50px",
                         }}
                       >
-                        <Card.Img
-                          variant="top"
-                          src={element.image_id}
-                          alt={element.description_image1}
-                        />
-                     
-                      </Card.Body>
-                    </Card>
+                        <Card.Body
+                          style={{
+                            color: "black",
+                          }}
+                        >
+                          <Card.Img
+                            id="imageHome"
+                            variant="top"
+                            src={element.image_id}
+                            alt={element.description_image1}
+                          />
+                        </Card.Body>
+                      </Card>
+                    </div>
                   );
                 })}
               </Row>
@@ -104,3 +89,22 @@ export class Main extends Component {
 }
 
 export default Main;
+
+// <div className="player-wrapper">
+// <ReactPlayer
+//   playing
+//   url={intro}
+//   height="100%"
+//   width="100%"
+//   muted="false"
+//   loop="true"
+// />
+
+// <div class="overlay">
+
+//   <h2>
+//     Liza Museum Arts <br /> Enjoy Seeing The Most Famous Museums
+//     Around The World
+//   </h2>
+// </div>
+// </div>

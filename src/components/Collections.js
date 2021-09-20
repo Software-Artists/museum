@@ -171,7 +171,7 @@ export class Collections extends Component {
                 <Card style={{ width: "25rem" }}>
                   <Card.Img
                     variant="top"
-                    src={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
+                    src={item.image_id}
                     alt="paint image"
                     onClick={this.handelClick}
                     id="image"
@@ -181,7 +181,7 @@ export class Collections extends Component {
                     <Card.Text> {item.location}</Card.Text>
                     <Button
                       onClick={this.addingToFav}
-                      name={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
+                      name={item.image_id}
                     >
                       {" "}
                       Add to Favorite ❤️
