@@ -7,22 +7,32 @@ class SelectedPaintings extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="modalDiv">
           <Modal show={this.props.show} onHide={this.props.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>{this.props.selectedModal.name}</Modal.Title>
+              <Modal.Title className="modalDiv">
+                {" "}
+                {this.props.selectedModal.name}
+              </Modal.Title>
             </Modal.Header>
 
-            <Card.Img
-              variant="top"
-              src={`https://www.artic.edu/iiif/2/${this.props.selectedModal.image_id}/full/843,/0/default.jpg`}
-            />
+            <Card.Img variant="top" src={this.props.selectedModal.image_id} />
 
-            <Modal.Body>{this.props.selectedModal.location}</Modal.Body>
-            <Modal.Body>{this.props.selectedModal.artist_display}</Modal.Body>
-            <Modal.Body>{this.props.selectedModal.title} </Modal.Body>
+            <Modal.Body className="modalDiv">
+              {this.props.selectedModal.location}
+            </Modal.Body>
+            <Modal.Body className="modalDiv">
+              {this.props.selectedModal.artist_display}
+            </Modal.Body>
+            <Modal.Body className="modalDiv">
+              {this.props.selectedModal.title}{" "}
+            </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={this.props.handleClose}>
+              <Button
+                variant="secondary"
+                onClick={this.props.handleClose}
+                className="modalDiv"
+              >
                 Close
               </Button>
             </Modal.Footer>

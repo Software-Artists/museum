@@ -27,7 +27,6 @@ import Card from "react-bootstrap/Card";
 export class Profile extends Component {
   render() {
     console.log(this.props);
-    console.log("pppppppppppppp", this.props.selectedData);
     return (
       <div>
         <div>
@@ -39,7 +38,7 @@ export class Profile extends Component {
                   <Card style={{ width: "25rem" }}>
                     <Card.Img
                       variant="top"
-                      src={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
+                      src={item.image_id}
                       alt="paint image"
                       id="profilePaintingImage"
                     />
