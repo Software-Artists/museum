@@ -5,7 +5,7 @@ import "../css/feedback.css";
 export class Footer extends Component {
   render() {
     return (
-      <div id="footerId">
+      <div id="footerDiv">
         <Card className="text-center">
           <Card.Footer className="text-muted">
             <pre style={{ fontSize: "30px", fontWeight: "bold" }}>
