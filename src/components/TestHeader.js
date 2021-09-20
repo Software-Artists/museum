@@ -1,51 +1,39 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import LogoImage from "../components/imgs/museumLogo.png";
 
 export class TestHeader extends Component {
   render() {
     return (
       <div>
         <header>
-          <img
-            id="logiImage"
-            src="https://img.favpng.com/17/8/21/png-logo-png-favpng-bnQXBdspUxidhRGqSV3Z6hM3w.jpg"
-            alt="Logo Image"
-          />
+          <img id="logiImage" src={LogoImage} alt="Logo Image" />
 
-          <p id="logiText">Liza Museum Arts</p>
+          {/* <p id="logiText">Liza Museum Arts</p> */}
 
           <nav>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/Collections">Collections</a>
+                <Link to="/Collections">Collections</Link>
               </li>
               <li>
-                <a href="/Event">Event</a>
+                <Link to="/Event">Event</Link>
               </li>
-              <li>
-                <a href="/Aboutus">About us</a>
-              </li>
-              <li>
-                <a href="/Feedback">Feedback</a>
-              </li>
-              {/* <li class="dropdown">
-                <a href="/Aboutus" class="dropbtn">
-                  About us
-                </a>
+
+              <li class="dropdown">
+                <Link to="/Aboutus">About us</Link>
 
                 <div class="dropdown-content">
-                  <a class="dropElement" href="/Aboutus">
-                    About The Team
-                  </a>
-                  <a class="dropElement" href="/Feedback">
-                    Feedback
-                  </a>
+                  <Link to="/Aboutus">About The Team</Link>
+
+                  <Link to="/Feedback">Feedback</Link>
                 </div>
-              </li> */}
+              </li>
               <li>
-                <a href="/profile">profile</a>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
           </nav>

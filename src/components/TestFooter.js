@@ -1,21 +1,48 @@
 import React, { Component } from "react";
+import { SocialIcon } from "react-social-icons";
 
 export class TestFooter extends Component {
   render() {
     return (
       <div id="footerDiv">
         <footer>
-          <h2>Stay Conected</h2>
+          <h2>SIGN UP TO EMAILS</h2>
 
-          {/* <div id="social">
-            <a href="#" class="fa fa-facebook" style="width: 60px"></a>
-            <a href="#" class="fa fa-twitter" style="width: 60px"></a>
-            <a href="#" class="fa fa-google" style="width: 60px"></a>
-            <a href="#" class="fa fa-linkedin" style="width: 60px"></a>
-            <a href="#" class="fa fa-youtube" style="width: 60px"></a>
+          <div className="signFooter ">
+            <label id="newsletter-label" for="email">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              class="form-item__input form-item__input--text"
+              name="email"
+              placeholder="Email address"
+              aria-label="Subscribe to email newsletter"
+              autocomplete="email"
+            />
+          </div>
+          {/* <div class="signButtonFooter">
+            <button type="submit" class="btn btn--submit">
+              Submit
+            </button>
           </div> */}
+          <div id="social">
+            <SocialIcon url="https://twitter.com/jaketrent" />
+            <SocialIcon url="https://www.facebook.com/jaketrent" />
+            <SocialIcon url="https://www.youtube.com/jaketrent" />
+            <SocialIcon url="https://www.google.com/jaketrent" />
+            <SocialIcon url="https://www.instagram.com/jaketrent" />
+          </div>
 
-          <p id="copyRights">Software Artists&copy;Liza Museum Arts</p>
+          <p id="copyRights">
+            &copy;2021 Liza Museum Arts. All rights reserved
+          </p>
+
+          <div id="contactDiv">
+            <font> Get in touch via the channels below, or by emailing </font>{" "}
+            <font color="orange"> contact@liza.com</font>{" "}
+          </div>
         </footer>
       </div>
     );
@@ -23,3 +50,4 @@ export class TestFooter extends Component {
 }
 
 export default TestFooter;
+
