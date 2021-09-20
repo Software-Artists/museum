@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       museumData: [],
       paintingsData: [],
-      mus:[],
+      mus: [],
     };
   }
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
       .then((museumResponse) => {
-        this.setState({ museumData: museumResponse.data, });
+        this.setState({ museumData: museumResponse.data });
       });
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/paintings`)
@@ -35,9 +35,6 @@ class App extends React.Component {
       });
   };
   render() {
-
-    
-    console.log(this.state.museumData);
     return (
       <div className="App">
         <Router>
