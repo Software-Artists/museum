@@ -69,7 +69,7 @@ export class Main extends Component {
               }}
             >
               <Row xs={1} md={5} className="g-4">
-                {this.props.paintingsData.slice(0, 20).map((element) => {
+                {this.props.paintingsData.slice(0, 70).map((element) => {
                   return (
                     <Card
                       style={{
@@ -85,10 +85,10 @@ export class Main extends Component {
                       >
                         <Card.Img
                           variant="top"
-                          src={`https://www.artic.edu/iiif/2/${element.image_id}/full/843,/0/default.jpg`}
+                          src={element.image_id}
                           alt={element.description_image1}
                         />
-                        <Card.Title>{element.artist_display}</Card.Title>
+                     
                       </Card.Body>
                     </Card>
                   );
