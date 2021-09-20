@@ -6,6 +6,8 @@ import "../index.css";
 import Form from "react-bootstrap/Form";
 import SelectedPaintings from "./SelectedPaintings";
 import Button from "react-bootstrap/Button";
+import Swal from "sweetalert2";
+
 
 export class Collections extends Component {
   constructor(props) {
@@ -86,6 +88,13 @@ export class Collections extends Component {
   };
 
   addingToFav = async (e) => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "added to favorite",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     // console.log("addingToFav", e.target);
     // let favItem = e.target.name;
     let filteredFavArray = [];
