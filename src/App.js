@@ -20,6 +20,7 @@ class App extends React.Component {
       museumData: [],
       paintingsData: [],
       passingData: [],
+      mus: [],
     };
   }
 
