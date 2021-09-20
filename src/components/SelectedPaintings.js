@@ -5,9 +5,9 @@ import Card from "react-bootstrap/Card";
 
 class SelectedPaintings extends React.Component {
   render() {
-    console.log(this.props.selectedData);
+    // console.log(this.props.selectedData);
     // let selectedID = e.target.id.value
-    console.log(this.props.selectedID);
+    // console.log(this.props.selectedID);
 
     return (
       <div>

@@ -11,6 +11,7 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
+// import FeedbackForm from "./components/feedbackForm";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends React.Component {
     this.state = {
       museumData: [],
       paintingsData: [],
-      mus:[],
+      mus: [],
+      gender: "",
     };
   }
 
@@ -26,7 +28,7 @@ class App extends React.Component {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/museum`)
       .then((museumResponse) => {
-        this.setState({ museumData: museumResponse.data, });
+        this.setState({ museumData: museumResponse.data });
       });
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/paintings`)
@@ -34,10 +36,13 @@ class App extends React.Component {
         this.setState({ paintingsData: paintingsResponse.data });
       });
   };
+  gendarHandel = (value) => {
+    this.setState({
+      gender: value,
+    });
+  };
   render() {
-
-    
-    console.log(this.state.museumData);
+    // console.log(this.state.museumData);
     return (
       <div className="App">
         <Router>
@@ -65,7 +70,10 @@ class App extends React.Component {
               <Aboutus />
             </Route>
             <Route exact path="/Feedback">
-              <Feedback />
+              <Feedback
+                gendarHandel={this.gendarHandel}
+                gender={this.state.gender}
+              />
             </Route>
           </Switch>
           <Footer />
