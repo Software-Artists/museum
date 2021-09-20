@@ -6,7 +6,7 @@ import { RingLoader } from "react-spinners";
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
   display: block;
-  margin: 150px 50% 300px 50%;
+  margin: 150px 50% 300px 40%;
   border-color: red;
 `;
 
