@@ -84,7 +84,7 @@ export class Main extends Component {
                 })}
               </Row>
             </div>
-            )
+          
           </>
         )}
       </>

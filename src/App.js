@@ -88,7 +88,7 @@ class App extends React.Component {
               />
             </Route>
             <Route exact path="/Collections">
-              <Collections handelPassingFav={this.handelPassingFav} />
+              <Collections handelPassingFav={this.handelPassingFav} museumData={this.state.museumData} />
             </Route>
             <Route exact path="/Aboutus">
               <Aboutus />
