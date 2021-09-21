@@ -27,55 +27,114 @@ import "../Style/Profile.css";
 
 export class Profile extends Component {
   render() {
-    console.log(this.props);
+    const condetionForPanting = this.props.selectedData.length;
+    const condetionForEvent = this.props.data.length;
+    console.log(condetionForPanting);
     return (
       <div >
-        <div >
-          <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
-          {this.props.selectedData.map((item) => {
-            return (
-              <div >
-                <div id="profileDiv">
-                  <Card style={{ width: "25rem" }}>
-                    <Card.Img
-                      variant="top"
-                      src={item.image_id}
-                      alt="paint image"
-                      id="profilePaintingImage"
-                    />
-                    <Card.Body>
-                      <Card.Title> {item.name}</Card.Title>
-                      <Card.Text> {item.location}</Card.Text>
-                      <Card.Text> {item.title}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          <h3 className="EventTitle"> Selected Event</h3>
-          {this.props.data.map((value) => {
-            return (
-              <div class="d-flex justify-content-center"> 
-                <Card style={{ width: "90%" }}>
-                  <Card.Img variant="top" src={value.event_description_image} />
+        {condetionForPanting === 0 ? (
+          <div >
+            <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
+            <div class="d-flex justify-content-center">
+              <div id="profileDiv">
+                <Card style={{ width: "25rem" }}>
+                  {/* <Card.Img
+                        variant="top"
+                        src={item.image_id}
+                        alt="paint image"
+                        id="profilePaintingImage"
+                      /> */}
                   <Card.Body>
-                    <Card.Title>{value.name}</Card.Title>
-                    <Card.Text>{value.event_description}</Card.Text>
-                    <Card.Text className="event_description">
+                    <Card.Title> favorite paintings</Card.Title>
+                    {/* <Card.Text> Metropolitan Museum of art</Card.Text> */}
+                    <Card.Text>
                       {" "}
-                      Date Of Event: {value.date}
+                      you should choose from Collections page your favorite paintings
                     </Card.Text>
-
-                    <Card.Title>Ticket Price : {value.ticket_price}</Card.Title>
                   </Card.Body>
                 </Card>
               </div>
-            );
-          })}
-        </div>
+            </div>
+            
+          </div>
+        ) : (
+          <div>
+            <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
+            {this.props.selectedData.map((item) => {
+              return (
+                <div>
+                  <div id="profileDiv">
+                    <Card style={{ width: "25rem" }}>
+                      <Card.Img
+                        variant="top"
+                        src={item.image_id}
+                        alt="paint image"
+                        id="profilePaintingImage"
+                      />
+                      <Card.Body>
+                        <Card.Title> {item.name}</Card.Title>
+                        <Card.Text> {item.location}</Card.Text>
+                        <Card.Text> {item.title}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {condetionForEvent === 0 ? (
+          <div>
+            <h3 className="EventTitle"> Selected Event</h3>
+            <div class="d-flex justify-content-center">
+              <Card style={{ width: "90%" }}>
+                {/* <Card.Img
+                      variant="top"
+                      src={value.event_description_image}
+                    /> */}
+                <Card.Body>
+                  <Card.Title>Event</Card.Title>
+                  <Card.Text>you should choose from Event page your event</Card.Text>
+                  <Card.Text className="event_description">
+                    {" "}
+                    Date Of Event: didn't set 
+                  </Card.Text>
+
+                  <Card.Title>Ticket Price : didn't set </Card.Title>
+                </Card.Body>
+              </Card>
+            </div>
+            
+          </div>
+        ) : (
+          <div>
+            <h3 className="EventTitle"> Selected Event</h3>
+            {this.props.data.map((value) => {
+              return (
+                <div class="d-flex justify-content-center">
+                  <Card style={{ width: "90%" }}>
+                    <Card.Img
+                      variant="top"
+                      src={value.event_description_image}
+                    />
+                    <Card.Body>
+                      <Card.Title>{value.name}</Card.Title>
+                      <Card.Text>{value.event_description}</Card.Text>
+                      <Card.Text className="event_description">
+                        {" "}
+                        Date Of Event: {value.date}
+                      </Card.Text>
+
+                      <Card.Title>
+                        Ticket Price : {value.ticket_price}
+                      </Card.Title>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }
