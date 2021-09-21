@@ -52,7 +52,7 @@ export class Event extends Component {
                   <br/>
                   <Card.Text className="event_description">{value.event_description}</Card.Text>
                   
-                  <Card.Text className="event_description"> Date Of Event: {value.date}</Card.Text>
+                  <Card.Text className="event_description1"> Date Of Event: {value.date}</Card.Text>
 
                   <Card.Title>Ticket Price : {value.ticket_price}</Card.Title>
                   
