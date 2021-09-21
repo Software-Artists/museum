@@ -64,7 +64,7 @@ class FeedBackPage extends React.Component {
                     <Card
                       style={{
                         width: "18rem",
-                        height: "25rem",
+                        height: "30rem",
                         margin: "auto",
                         // backgroundColor: "lightBlue",
                       }}
@@ -72,8 +72,8 @@ class FeedBackPage extends React.Component {
                       {feedback.gender === "Male" ? (
                         <Card.Img
                           style={{
-                            width: "10rem",
-                            height: "10rem",
+                            width: "18rem",
+                            height: "18rem",
                           }}
                           variant="top"
                           src="https://sdmny.hunter.cuny.edu/wp-content/uploads/2017/04/male-headshot-placeholder.jpg"
@@ -81,8 +81,8 @@ class FeedBackPage extends React.Component {
                       ) : (
                         <Card.Img
                           style={{
-                            width: "10rem",
-                            height: "10rem",
+                            width: "18rem",
+                            height: "18rem",
                           }}
                           variant="top"
                           // src="https://via.placeholder.com/120px150"
