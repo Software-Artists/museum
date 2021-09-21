@@ -62,7 +62,12 @@ export class Profile extends Component {
                   <Card.Body>
                     <Card.Title>{value.name}</Card.Title>
                     <Card.Text>{value.event_description}</Card.Text>
-                    <Card.Title>{value.ticket_price}</Card.Title>
+                    <Card.Text className="event_description">
+                      {" "}
+                      Date Of Event: {value.date}
+                    </Card.Text>
+
+                    <Card.Title>Ticket Price : {value.ticket_price}</Card.Title>
                   </Card.Body>
                 </Card>
               </div>
