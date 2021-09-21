@@ -54,6 +54,40 @@ export class Profile extends Component {
             );
           })}
         </div>
+
+        <div>
+          {this.props.data.map((value) => {
+            return (
+              <div className="flex-container">
+                <div className="body_Event">
+                  <Card.Body>
+                    <Card.Title>{value.name}</Card.Title>
+                    <br />
+                    <Card.Text className="event_description">
+                      {value.event_description}
+                    </Card.Text>
+
+                    <Card.Text className="event_description">
+                      {" "}
+                      Date Of Event: {value.date}
+                    </Card.Text>
+
+                    <Card.Title>Ticket Price : {value.ticket_price}</Card.Title>
+
+                
+                  </Card.Body>
+                </div>
+                <div className="img_Event">
+                  <Card.Img
+                    className="img"
+                    variant="top"
+                    src={value.event_description_image}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div>
           <h3 className="EventTitle"> Selected Event</h3>
           {this.props.data.map((value) => {
