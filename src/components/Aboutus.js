@@ -22,7 +22,7 @@ class Aboutus extends React.Component {
               <Card.Title>Hebah zuhier</Card.Title>
               <Card.Text>
                 I graduated with a major in Biotechnology from Hashemit
-                university , i am intrested to learn programing languages , so I
+                university , i am interested to learn programing languages , so I
                 joined LUTC
               </Card.Text>
               <Card.Text>
@@ -62,7 +62,7 @@ class Aboutus extends React.Component {
             <Card.Body className="body">
               <Card.Title>Issa Salman</Card.Title>
               <Card.Text>
-                I'm Issa Salman mechatronics engineer and I am a full-stack Web
+                I'm Issa Salman a mechatronics engineer and I am a full-stack Web
                 Application Developer and Software Developer, currently living
                 in Zarqa, Jordan.
               </Card.Text>
