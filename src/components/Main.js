@@ -18,6 +18,7 @@ export class Main extends Component {
   }
   render() {
     return (
+      
       <>
         {this.props.loader ? (
           <Loader />
