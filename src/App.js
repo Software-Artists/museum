@@ -52,7 +52,7 @@ class App extends React.Component {
     });
   };
 
-  // console.log(this.state.museumData);
+
 
   handelPassingFav = (test) => {
     this.setState({
@@ -61,6 +61,7 @@ class App extends React.Component {
     // console.log("AAAPPPJJSS", this.state.passingData);
   };
   render() {
+    console.log(this.state.museumData);
     return (
       <div className="App">
         <Router>
