@@ -75,8 +75,7 @@ export class Collections extends Component {
 
     selectedItem = this.state.filterMuseumData.find(
       (value) =>
-        `https://www.artic.edu/iiif/2/${value.image_id}/full/843,/0/default.jpg` ===
-        this.state.selectedID
+        value.id === this.state.selectedID
     );
     // console.log("2222222222222", this.state.filterMuseumData);
     // console.log("111111111111111111", selectedItem);
@@ -104,8 +103,7 @@ export class Collections extends Component {
 
     filteredFavArray = this.state.filterMuseumData.find(
       (value) =>
-        `https://www.artic.edu/iiif/2/${value.image_id}/full/843,/0/default.jpg` ===
-        this.state.favItem
+        value.image_id ===     this.state.favItem
     );
 
     this.state.allFilteredFavArray.push(filteredFavArray);

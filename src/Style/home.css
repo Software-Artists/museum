@@ -14,6 +14,7 @@
     border-radius: 4px;
     box-sizing: border-box;
     opacity: 0.9;
+    box-shadow: 7px 10px 15px black;
   }
   
   #paintingHomeDiv #image:hover {
@@ -22,4 +23,10 @@
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
     opacity: 1;
     transition: all 0.3s ease-in;
+  }
+  #hamza{
+
+    box-shadow: 10px 10px 15px  black;
+    margin-left: 50px;
+    margin-right: 50px;
   }

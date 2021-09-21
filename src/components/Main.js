@@ -25,14 +25,15 @@ export class Main extends Component {
           <>
             <section className="backG">
               <div class="d-flex justify-content-center">
-                <Carousel fade className="d-block w-75">
+                <Carousel id="hamza" fade className="d-block w-100">
                   {this.props.museumData.slice(0, 7).map((element) => {
                     return (
                       <Carousel.Item interval={1500}>
-                        <img
+                        <img 
                           className="d-block w-100"
                           src={element.museum_image}
                           alt="Image One"
+                          height="600px"
                         />
                         <Carousel.Caption>
                           <h3>{element.name}</h3>
