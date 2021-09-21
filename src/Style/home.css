@@ -1,11 +1,9 @@
 #paintingHomeDiv .card {
   width: 800px;
 
-margin: 20px;
-margin-left: 70px;
+  margin: 20px;
+  margin-left: 70px;
 }
-
-
 
 #paintingHomeDiv #imageHome {
   height: 420px;
@@ -13,21 +11,61 @@ margin-left: 70px;
   border: 10px solid #a98960;
   border-radius: 4px;
   box-sizing: border-box;
-  opacity: 0.9;
+
   box-shadow: 7px 10px 15px black;
 }
 
-#paintingHomeDiv #image:hover {
-  height: 400px;
-  width: 400px;
-  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
-  opacity: 1;
-  transition: all 0.3s ease-in;
-} 
-#shad{
 
-  box-shadow: 10px 10px 15px  black;
+/* #paintingHomeDiv .card:hover {
+  box-shadow: 5px 5px 20px 20px rgb(0, 0, 0);
+  width: 800px;
+
+  margin: 20px;
+  margin-left: 70px;
+} */
+/* #paintingHomeDiv .card:hover {
+  box-shadow: 5px 5px 20px 20px rgb(0, 0, 0);
+  width: 800px;
+
+
+  margin: 20px;
+  margin-left: 70px;
+} */
+
+#shad {
+  box-shadow: 10px 10px 15px black;
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 40px;
 }
+
+/* Flashing */
+figure:hover #imageHome {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* <div class="hover13 column">
+  <div>
+    <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
+    <span>Hover</span>
+  </div>
+ 
+</div> */

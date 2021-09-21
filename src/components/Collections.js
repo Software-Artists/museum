@@ -108,9 +108,9 @@ export class Collections extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div id="topImageDiv">
           <img
-            src="https://www.overstockart.com/blog/wp-content/uploads/2011/12/starrynight-1020x500.jpg"
+            src="https://i.pinimg.com/originals/c1/fd/f9/c1fdf992b56731c0e637bfea45f78f44.gif"
             alt=""
             id="topImage"
           />

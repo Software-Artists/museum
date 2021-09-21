@@ -55,29 +55,31 @@ export class Main extends Component {
               <Row xs={1} md={3} className="g-4">
                 {this.props.paintingsData.slice(0, 6).map((element) => {
                   return (
-                    <div id="paintingHomeDiv">
-                      <Card
-                        style={{
-                          width: "18rem",
-                       
-                          margin: "50px",
-                        }}
-                      >
-                        <Card.Body
+                    <figure>
+                      <div id="paintingHomeDiv">
+                        <Card
                           style={{
-                            color: "black",
-                            padding: "0",
+                            width: "18rem",
+
+                            margin: "50px",
                           }}
                         >
-                          <Card.Img
-                            id="imageHome"
-                            variant="top"
-                            src={element.image_id}
-                            alt={element.description_image1}
-                          />
-                        </Card.Body>
-                      </Card>
-                    </div>
+                          <Card.Body
+                            style={{
+                              color: "black",
+                              padding: "0",
+                            }}
+                          >
+                            <Card.Img
+                              id="imageHome"
+                              variant="top"
+                              src={element.image_id}
+                              alt={element.description_image1}
+                            />
+                          </Card.Body>
+                        </Card>
+                      </div>
+                    </figure>
                   );
                 })}
               </Row>
