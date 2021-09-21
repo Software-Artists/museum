@@ -13,15 +13,22 @@
 }
 
 .formDiv {
+  /* background-color: bisque; */
+  background-color: #f3f0d7;
+
   margin-bottom: 2%;
 }
 
 .card {
   width: "18rem";
   margin: "auto";
+  background-color: #cee5d0;
+  /* #5E454B */
 }
 
 #cardFeedback {
+  background-color: #f3f0d7;
+
   float: left;
   margin: auto;
   width: 25%;
