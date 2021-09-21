@@ -47,12 +47,32 @@ class FeedBackPage extends React.Component {
     console.log("Gender :", this.props.genderr);
     return (
       <div>
-        <h2>FeedBack</h2>
-        <div className="formDiv">
-          <FeedbackForm
-            formSubmit={this.formSubmit}
-            gendarHandel={this.props.gendarHandel}
-          />
+        <div className="row">
+          <div className="column1">
+            <div>
+              <FeedbackForm
+                formSubmit={this.formSubmit}
+                gendarHandel={this.props.gendarHandel}
+              />
+            </div>
+          </div>
+          <div className="column2">
+            <h2 id="co2Text">
+              Your feedback is important to us , feel free to say anything about
+              our website!
+            </h2>
+            <Card.Img
+              style={{
+                marginTop: "20px",
+                marginRight: "auto",
+                marginLeft: "auto",
+                width: "20rem",
+                height: "20rem",
+              }}
+              variant="top"
+              src="https://techcrunch.com/wp-content/uploads/2015/04/feedback.jpg?w=1390&crop=1"
+            />
+          </div>
         </div>
         <div>
           {this.state.feedbacks.length > 0 && (
@@ -63,17 +83,18 @@ class FeedBackPage extends React.Component {
                   <div id="cardFeedback">
                     <Card
                       style={{
-                        width: "18rem",
-                        height: "30rem",
+                        width: "12rem",
+                        height: "15rem",
                         margin: "auto",
-                        // backgroundColor: "lightBlue",
                       }}
                     >
                       {feedback.gender === "Male" ? (
                         <Card.Img
                           style={{
-                            width: "18rem",
-                            height: "18rem",
+                            marginRight: "auto",
+                            marginLeft: "auto",
+                            width: "5rem",
+                            height: "5rem",
                           }}
                           variant="top"
                           src="https://sdmny.hunter.cuny.edu/wp-content/uploads/2017/04/male-headshot-placeholder.jpg"
@@ -81,8 +102,11 @@ class FeedBackPage extends React.Component {
                       ) : (
                         <Card.Img
                           style={{
-                            width: "18rem",
-                            height: "18rem",
+                            alignContent: "center",
+                            marginRight: "auto",
+                            marginLeft: "auto",
+                            width: "5rem",
+                            height: "5rem",
                           }}
                           variant="top"
                           // src="https://via.placeholder.com/120px150"
@@ -92,7 +116,6 @@ class FeedBackPage extends React.Component {
                       <Card.Body>
                         <Card.Title
                           style={{
-                            color: "green",
                             borderBottom: "2px solid black",
                           }}
                         >

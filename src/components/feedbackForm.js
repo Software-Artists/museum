@@ -15,15 +15,8 @@ class FeedBackForm extends React.Component {
   render() {
     // console.log(this.state.gender);
     return (
-      <div>
-        {/* ===================================================on submit  */}
-        <Form
-          className="Form"
-          onSubmit={this.props.formSubmit}
-
-          // style={{ width: 500, margin: "auto" }}
-        >
-          {/* ===================================================  */}
+      <div id="formD">
+        <Form className="Form" onSubmit={this.props.formSubmit}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="FormLabels">User Name:</Form.Label>
             <Form.Control
