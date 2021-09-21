@@ -85,7 +85,7 @@ export class Main extends Component {
                       >
                         <Card.Img
                           variant="top"
-                          src={`https://www.artic.edu/iiif/2/${element.image_id}/full/843,/0/default.jpg`}
+                          src={element.image_id}
                           alt={element.description_image1}
                         />
                         <Card.Title>{element.artist_display}</Card.Title>
