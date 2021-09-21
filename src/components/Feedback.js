@@ -22,12 +22,13 @@ class FeedBackPage extends React.Component {
   };
 
   //================== Form Submit:====================================
+
   formSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
       name: e.target.name.value,
       feedBackMessage: e.target.feedback.value,
-      gender: e.target.value,
+      gender: this.props.genderr,
     };
 
     axios
@@ -43,7 +44,7 @@ class FeedBackPage extends React.Component {
   };
 
   render() {
-    console.log("Gender :", this.props.gender);
+    console.log("Gender :", this.props.genderr);
     return (
       <div>
         <h2>FeedBack</h2>
@@ -53,29 +54,39 @@ class FeedBackPage extends React.Component {
             gendarHandel={this.props.gendarHandel}
           />
         </div>
-        <div className="cardDiv">
+        <div>
           {this.state.feedbacks.length > 0 && (
             <>
               {this.state.feedbacks.map((feedback) => {
+                console.log("feef", feedback.gender);
                 return (
                   <div id="cardFeedback">
-                    <Card
+                    <Card className="feedCard"
                       style={{
                         width: "18rem",
-                        height: "35rem",
+                        height: "30rem",
                         margin: "auto",
                         // backgroundColor: "lightBlue",
                       }}
                     >
-                      {this.props.gender === "Male" ? (
+                      {feedback.gender === "Male" ? (
                         <Card.Img
+                          style={{
+                            width: "18rem",
+                            height: "18rem",
+                          }}
                           variant="top"
                           src="https://sdmny.hunter.cuny.edu/wp-content/uploads/2017/04/male-headshot-placeholder.jpg"
                         />
                       ) : (
                         <Card.Img
+                          style={{
+                            width: "18rem",
+                            height: "18rem",
+                          }}
                           variant="top"
-                          src="https://via.placeholder.com/120px150"
+                          // src="https://via.placeholder.com/120px150"
+                          src="https://www.cirquebijou.co.uk/wp-content/uploads/2016/12/placeholder-female1.jpg"
                         />
                       )}
                       <Card.Body>
