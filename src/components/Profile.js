@@ -27,7 +27,6 @@ import Card from "react-bootstrap/Card";
 export class Profile extends Component {
   render() {
     console.log(this.props);
-    console.log("pppppppppppppp", this.props.selectedData);
     return (
       <div>
         <div>
