@@ -58,8 +58,8 @@ export class Profile extends Component {
           <h3 className="EventTitle"> Selected Event</h3>
           {this.props.data.map((value) => {
             return (
-              <div>
-                <Card style={{ width: "100%" }}>
+              <div class="d-flex justify-content-center"> 
+                <Card style={{ width: "90%" }}>
                   <Card.Img variant="top" src={value.event_description_image} />
                   <Card.Body>
                     <Card.Title>{value.name}</Card.Title>
