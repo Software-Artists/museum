@@ -53,7 +53,7 @@ export class Main extends Component {
               }}
             >
               <Row xs={1} md={3} className="g-4">
-                {this.props.paintingsData.slice(0, 27).map((element) => {
+                {this.props.paintingsData.slice(0, 6).map((element) => {
                   return (
                     <figure>
                       <div id="paintingHomeDiv">
@@ -84,7 +84,7 @@ export class Main extends Component {
                 })}
               </Row>
             </div>
-            )
+          
           </>
         )}
       </>

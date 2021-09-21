@@ -14,21 +14,17 @@
 
   box-shadow: 7px 10px 15px black;
 }
+#paintingHomeDiv #imageHome:hover {
+  height: 420px;
+  width: 300px;
+  border: 10px solid #4A403A;
+    border-radius: 4px;
+  box-sizing: border-box;
 
-/* #paintingHomeDiv .card:hover {
-  box-shadow: 5px 5px 20px 20px rgb(0, 0, 0);
-  width: 800px;
+  box-shadow: 7px 10px 15px black;
+}
 
-  margin: 20px;
-  margin-left: 70px;
-} */
-/* #paintingHomeDiv .card:hover {
-  box-shadow: 5px 5px 20px 20px rgb(0, 0, 0);
-  width: 800px;
 
-  margin: 20px;
-  margin-left: 70px;
-} */
 
 #shad {
   box-shadow: 10px 10px 15px black;
@@ -40,8 +36,8 @@
 /* Flashing */
 figure:hover #imageHome {
   opacity: 1;
-  -webkit-animation: flash 1.5s;
-  animation: flash 1.5s;
+  -webkit-animation: flash 3s;
+  animation: flash 3s;
 }
 @-webkit-keyframes flash {
   0% {
@@ -60,10 +56,5 @@ figure:hover #imageHome {
   }
 }
 
-/* <div class="hover13 column">
-  <div>
-    <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
-    <span>Hover</span>
-  </div>
- 
-</div> */
+
+

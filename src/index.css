@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f4f4;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -23,7 +22,6 @@ code {
 #paintingDiv {
   float: left;
 }
-
 #paintingDiv .card {
   width: 800px;
   height: 510px;
@@ -34,19 +32,16 @@ code {
   background-color: #e2e1e1;
   box-shadow: 5px 5px 5px 5px #00303f;
 }
-
 #topImage {
   width: 100%;
   height: 600px;
 }
-
 #paintingDiv #image {
   height: 350px;
 
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 #paintingDiv .card:hover {
   box-shadow: 5px 5px 5px 5px #793a36;
 
@@ -76,7 +71,6 @@ code {
 /* 
 .hover14 figure::before {
   z-index: 2;
-
   background: -webkit-linear-gradient(
     left,
     rgba(255, 255, 255, 0) 0%,
@@ -104,7 +98,6 @@ code {
     left: 125%;
   }
 } */
-
 #formDiv {
   /* border: 10px solid #a98960; */
 
@@ -119,7 +112,6 @@ code {
   color: #00303f;
   padding-bottom: 20px;
 }
-
 #collectionButton {
   color: #b49874;
   background-color: #00303f;
@@ -139,23 +131,28 @@ code {
 #profileDiv {
   float: left;
 }
-
 #profileDiv .card {
   width: 800px;
-
+  height: 500px;
   margin: 20px;
-  margin-left: 70px;
+  margin-left: 105px;
   color: #00303f;
   font-family: "Bebas Neue", cursive;
-  background-color: #cae4db;
+  background-color: #e2e1e1;
+  box-shadow: 5px 5px 5px 5px #00303f;
+}
+
+#profileDiv .card:hover {
+  box-shadow: 5px 5px 5px 5px #793a36;
+
+  transition: all 0.1s ease-in;
 }
 #profileDiv #profilePaintingImage {
-  height: 400px;
-  border: 10px solid #a98960;
+  height: 350px;
+
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 #h3FavProfileDiv {
   border: 10px solid #a98960;
   border-radius: 4px; /* Rounded borders */
@@ -164,18 +161,13 @@ code {
   color: #00303f;
   font-family: "Bebas Neue", cursive;
 }
-
 /* ------------Profile----------------- */
 /* ------------Footer----------------- */
-
 #footerDiv {
   clear: both;
 }
-
 /* ------------Footer----------------- */
-
 /* ------------Header----------------- */
-
 header {
   width: 100%;
   height: 100px;
@@ -186,14 +178,12 @@ header {
   top: 0;
   z-index: 9999998;
 }
-
 header #logiImage {
   position: absolute;
   width: 200px;
   left: 20px;
   top: 0px;
 }
-
 /* #logiText {
   position: absolute;
   top: 29px;
@@ -203,7 +193,6 @@ header #logiImage {
   font-family: "Bebas Neue", cursive;
 } */
 /* ? */
-
 header nav ul li {
   display: inline-block;
   margin-right: 70px;
@@ -218,25 +207,19 @@ header nav ul li a {
   text-decoration: none;
   color: #cdac81;
 }
-
 header nav ul li a:hover {
   color: rgb(192, 134, 59);
-
   border-bottom: 3px solid rgb(192, 134, 59);
 }
-
 header nav ul {
   position: absolute;
   left: 400px;
   top: 30px;
 }
-
 /* dropdown */
-
 li.dropdown {
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   color: #cdac81;
@@ -248,7 +231,6 @@ li.dropdown {
   left: 47px;
   font-size: 15px;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -256,20 +238,16 @@ li.dropdown {
   display: block;
   text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropElement {
   font-size: 15px;
 }
 /* ------------Header----------------- */
-
 /* ------------Footer----------------- */
 /* .App {
   min-height: 500px;
@@ -280,8 +258,8 @@ footer {
   background-color: #00303f;
   width: 100%;
   color: #cdac81;
+  margin-top: 50px;
 }
-
 footer #copyRights {
   font-size: 25px;
   color: #cdac81;
@@ -291,7 +269,6 @@ footer #copyRights {
   bottom: 4px;
   font-family: "Bebas Neue", cursive;
 }
-
 /* #contactDiv {
   font-size: 23px;
   color: #cdac81;
@@ -301,7 +278,6 @@ footer #copyRights {
   top: 12px;
   font-family: "Bebas Neue", cursive;
 } */
-
 #contactDiv {
   font-size: 23px;
   color: #cdac81;
@@ -311,7 +287,6 @@ footer #copyRights {
   top: 28px;
   font-family: "Bebas Neue", cursive;
 }
-
 footer h2 {
   color: #cdac81;
   position: absolute;
@@ -320,7 +295,6 @@ footer h2 {
   font-family: "Bebas Neue", cursive;
   top: 100px;
 }
-
 .socialButtons {
   margin: 5px;
 }
@@ -339,10 +313,8 @@ footer h2 {
   font-family: "Bebas Neue", cursive;
   width: 157px;
   margin-left: 30px;
-
   padding-top: 20px;
 }
-
 footer ul li {
   font-size: 20px;
   font-weight: bolder;
@@ -357,27 +329,22 @@ footer ul li a {
   text-decoration: none;
   color: #cdac81;
 }
-
 footer ul li a:hover {
   color: rgb(192, 134, 59);
-
   /* border-bottom: 3px solid rgb(192, 134, 59); */
 }
-
 /* #social {
   position: absolute;
   bottom: 143px;
   width: 400px;
   left: 93px;
 } */
-
 #social {
   position: absolute;
   bottom: 127px;
   width: 400px;
   left: 580px;
 }
-
 .signFooter {
   color: #cdac81;
   position: absolute;
@@ -405,7 +372,6 @@ footer ul li a:hover {
 }
 .form-item--text {
 }
-
 #newsletter-label {
 }
 #email {
