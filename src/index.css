@@ -38,6 +38,8 @@ code {
   width: 100%;
   height: 600px;
 }
+#topImageDiv {
+}
 
 #paintingDiv #image {
   height: 400px;
@@ -46,13 +48,63 @@ code {
   box-sizing: border-box;
 }
 
-#paintingDiv #image:hover {
-  height: 400px;
-  width: 400px;
+#paintingDiv .card:hover {
   box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
 
   transition: all 0.1s ease-in;
+  /* opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s; */
 }
+/* @-webkit-keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+/* Shine */
+/* 
+.hover14 figure::before {
+  z-index: 2;
+
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+} */
+/* .hover14 figure:hover::before {
+  -webkit-animation: shine 0.75s;
+  animation: shine 0.75s;
+}
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+} */
 
 #formDiv {
   border: 10px solid #a98960;
