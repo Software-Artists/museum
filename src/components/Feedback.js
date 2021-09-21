@@ -81,7 +81,7 @@ class FeedBackPage extends React.Component {
                 console.log("feef", feedback.gender);
                 return (
                   <div id="cardFeedback">
-                    <Card
+                    <Card className="feedCard"
                       style={{
                         width: "12rem",
                         height: "15rem",
