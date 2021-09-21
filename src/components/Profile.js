@@ -29,12 +29,12 @@ export class Profile extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
-        <div>
+      <div >
+        <div >
           <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
           {this.props.selectedData.map((item) => {
             return (
-              <div>
+              <div >
                 <div id="profileDiv">
                   <Card style={{ width: "25rem" }}>
                     <Card.Img
