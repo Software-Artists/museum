@@ -70,12 +70,7 @@ export class Collections extends Component {
     let selectedItem = [];
 
     selectedItem = this.state.filterMuseumData.find(
-<<<<<<< HEAD
-      (value) =>
-        value.id === this.state.selectedID
-=======
       (value) => value.image_id === this.state.selectedID
->>>>>>> 774213184913fee8fcea9c71bed657f9e76517d6
     );
 
     this.setState({
@@ -98,12 +93,7 @@ export class Collections extends Component {
     });
 
     filteredFavArray = this.state.filterMuseumData.find(
-<<<<<<< HEAD
-      (value) =>
-        value.image_id ===     this.state.favItem
-=======
       (value) => value.image_id === this.state.favItem
->>>>>>> 774213184913fee8fcea9c71bed657f9e76517d6
     );
 
     this.state.allFilteredFavArray.push(filteredFavArray);
