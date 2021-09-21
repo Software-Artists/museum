@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import SelectedPaintings from "./SelectedPaintings";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
+import "../Style/collectionForm.css";
 
 export class Collections extends Component {
   constructor(props) {
@@ -103,6 +104,18 @@ export class Collections extends Component {
     });
 
     this.props.handelPassingFav(this.state.addToFavorite);
+
+    // ********************************************************************
+    <div class="hover14 column">
+      <div>
+        <figure>
+          <img src="https://picsum.photos/300/200?image=244" />
+        </figure>
+        <span>Hover</span>
+      </div>
+    </div>;
+
+    // ********************************************************************
   };
 
   render() {
@@ -115,12 +128,6 @@ export class Collections extends Component {
             id="topImage"
           />
         </div>
-        {/* <div class="overlay" id="overlayDiv">
-          <h2>
-            Liza Museum Arts <br /> Enjoy Seeing The Most Famous Museums Around
-            The World
-          </h2>
-        </div> */}
 
         <div id="formDiv">
           <Form className="selectForm">
@@ -128,32 +135,37 @@ export class Collections extends Component {
               Select a museum to see all paintings from the same museum{" "}
             </Form.Label>
 
-            <Form.Control as="select" onChange={this.filterMuseum}>
-              <option value="0"> select museum name </option>
-              <option value="Louvre"> Louvre Museum </option>
-              <option value="THE_PRADO"> The Prado Museum </option>
-              <option value="THE_VATICAN_MUSEUMS"> The Vatican Museum </option>
-              <option value="THE_STATE_HERMITAGE_MUSEUM">
-                {" "}
-                The State Hermitage Museum{" "}
-              </option>
-              <option value="THE_UFFIZI_GALLERIES">
-                {" "}
-                The UFFIZI Galleries{" "}
-              </option>
-              <option value="Metropolitan_Museum_of_art">
-                {" "}
-                Metropolitan Museum of art{" "}
-              </option>
-              <option value="THE_BRITISH_MUSEUM"> The British Museum </option>
-            </Form.Control>
+            <span onChange={this.filterMuseum} class="custom-dropdown big">
+              <select>
+                <option value="0"> select museum name </option>
+                <option value="Louvre"> Louvre Museum </option>
+                <option value="THE_PRADO"> The Prado Museum </option>
+                <option value="THE_VATICAN_MUSEUMS">
+                  {" "}
+                  The Vatican Museum{" "}
+                </option>
+                <option value="THE_STATE_HERMITAGE_MUSEUM">
+                  {" "}
+                  The State Hermitage Museum{" "}
+                </option>
+                <option value="THE_UFFIZI_GALLERIES">
+                  {" "}
+                  The UFFIZI Galleries{" "}
+                </option>
+                <option value="Metropolitan_Museum_of_art">
+                  {" "}
+                  Metropolitan Museum of art{" "}
+                </option>
+                <option value="THE_BRITISH_MUSEUM"> The British Museum </option>
+              </select>
+            </span>
           </Form>
         </div>
         <div>
           {this.state.filterMuseumData.map((item) => {
             return (
               <div id="paintingDiv">
-                <Card style={{ width: "25rem" }}>
+                <Card style={{ width: "22rem" }}>
                   <Card.Img
                     variant="top"
                     src={item.image_id}
