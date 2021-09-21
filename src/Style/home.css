@@ -24,9 +24,10 @@
     opacity: 1;
     transition: all 0.3s ease-in;
   }
-  #hamza{
+  #shad{
 
     box-shadow: 10px 10px 15px  black;
     margin-left: 50px;
     margin-right: 50px;
+    margin-top: 40px;
   }

@@ -18,7 +18,6 @@ export class Main extends Component {
   }
   render() {
     return (
-      
       <>
         {this.props.loader ? (
           <Loader />
@@ -26,11 +25,11 @@ export class Main extends Component {
           <>
             <section className="backG">
               <div class="d-flex justify-content-center">
-                <Carousel id="hamza" fade className="d-block w-100">
+                <Carousel id="shad" fade className="d-block w-100">
                   {this.props.museumData.slice(0, 7).map((element) => {
                     return (
                       <Carousel.Item interval={1500}>
-                        <img 
+                        <img
                           className="d-block w-100"
                           src={element.museum_image}
                           alt="Image One"
@@ -54,13 +53,13 @@ export class Main extends Component {
               }}
             >
               <Row xs={1} md={3} className="g-4">
-                {this.props.paintingsData.slice(0, 25).map((element) => {
+                {this.props.paintingsData.slice(0, 27).map((element) => {
                   return (
                     <div id="paintingHomeDiv">
                       <Card
                         style={{
                           width: "22rem",
-                         
+
                           margin: "50px",
                         }}
                       >
@@ -75,6 +74,7 @@ export class Main extends Component {
                             src={element.image_id}
                             alt={element.description_image1}
                           />
+                        
                         </Card.Body>
                       </Card>
                     </div>
