@@ -23,6 +23,7 @@
 
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
+import "../Style/Profile.css";
 
 export class Profile extends Component {
   render() {
@@ -54,6 +55,7 @@ export class Profile extends Component {
           })}
         </div>
         <div>
+          <h3 className="EventTitle"> Selected Event</h3>
           {this.props.data.map((value) => {
             return (
               <div>
