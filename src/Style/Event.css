@@ -4,15 +4,18 @@
   
 .img_Event{
     
-    width: 48%;
+    width: 50%;
+    margin-right: 20px;
    
 }
 .body_Event{
-    width: 48%;
+    width: 50%;
     padding-top: 10%;
     border: 0.1px solid black;
     height: 400px;
     padding-top:60px;
+    margin-left: 20px;
+    margin-right: 5px;
 
 }
 

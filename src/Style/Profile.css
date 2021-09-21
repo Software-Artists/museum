@@ -30,3 +30,12 @@ font-size: larger;
   .img{
       height: 400px;
   }
+
+  .EventTitle{
+    border: 10px solid #a98960;
+    border-radius: 4px; 
+    margin: 20px 550px 20px 550px;
+    color: #020f13;
+    font-family: "Bebas Neue", cursive;
+    /* background-color: black; */
+  }
