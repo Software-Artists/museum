@@ -32,6 +32,7 @@ font-size: larger;
   }
 
   .EventTitle{
+    clear: both;
     border: 10px solid #a98960;
     border-radius: 4px; 
     margin: 20px 550px 20px 550px;
