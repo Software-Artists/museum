@@ -80,7 +80,7 @@ class FeedBackPage extends React.Component {
               {this.state.feedbacks.map((feedback) => {
                 console.log("feef", feedback.gender);
                 return (
-                  <div id="cardFeedback">
+                  <div  id="cardFeedback">
                     <Card className="feedCard"
                       style={{
                         width: "12rem",
