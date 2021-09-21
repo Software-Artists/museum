@@ -58,7 +58,7 @@ export class Main extends Component {
                     <div id="paintingHomeDiv">
                       <Card
                         style={{
-                          width: "22rem",
+                          width: "18rem",
 
                           margin: "50px",
                         }}
@@ -66,10 +66,11 @@ export class Main extends Component {
                         <Card.Body
                           style={{
                             color: "black",
+                            padding:"0",
                           }}
                         >
                           <Card.Img
-                            id="imageHome"
+                            className="imageHome"
                             variant="top"
                             src={element.image_id}
                             alt={element.description_image1}
