@@ -284,16 +284,16 @@ footer #copyRights {
   position: absolute;
   left: 460px;
   right: 430px;
-  top: 28px;
+  top: 60px;
   font-family: "Bebas Neue", cursive;
 }
 footer h2 {
   color: #cdac81;
   position: absolute;
   font-size: 25px;
-  right: 90px;
+  right: 45px;
   font-family: "Bebas Neue", cursive;
-  top: 100px;
+  top: 65px;
 }
 .socialButtons {
   margin: 5px;
@@ -306,6 +306,20 @@ footer h2 {
   width: 100px;
   margin-left: 51px;
   padding-top: 16px;
+}
+#quickLinks2 {
+  position: absolute;
+  width: 100px;
+  margin-left: 51px;
+  padding-top: 16px;
+  bottom:6px;
+  left:80px
+}
+#allquick{
+
+  position: absolute;
+  top: 35px;
+
 }
 #quickLinks p {
   font-size: 20px;
@@ -341,7 +355,7 @@ footer ul li a:hover {
 } */
 #social {
   position: absolute;
-  bottom: 127px;
+  bottom: 80px;
   width: 400px;
   left: 580px;
 }

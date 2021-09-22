@@ -46,8 +46,8 @@ export class Event extends Component {
               
             
 
-              <div className="body_Event">
-                <Card.Body>
+              <div  className="body_Event">
+                <Card.Body >
                   <Card.Title >{value.name}</Card.Title>
                   <br/>
                   <Card.Text className="event_description">{value.event_description}</Card.Text>
