@@ -6,7 +6,12 @@ import Button from "react-bootstrap/Button";
 export class TestFooter extends Component {
   render() {
     return (
-      <div id="footerDiv">
+      <div
+        id="footerDiv"
+        style={{
+          marginTop: "50px",
+        }}
+      >
         <footer>
           <h2>SIGN UP TO EMAILS</h2>
 

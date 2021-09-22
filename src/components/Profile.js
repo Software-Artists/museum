@@ -31,13 +31,19 @@ export class Profile extends Component {
     const condetionForEvent = this.props.data.length;
     console.log(condetionForPanting);
     return (
-      <div >
+      <div>
         {condetionForPanting === 0 ? (
-          <div >
+          <div>
             <h3 id="h3FavProfileDiv"> Favorite Paintings List ❤️</h3>
             <div class="d-flex justify-content-center">
               <div id="profileDiv">
-                <Card style={{ width: "25rem" }}>
+                <Card
+                  style={{
+                    width: "25rem",
+                    height: "150px",
+                    marginRight: "88px",
+                  }}
+                >
                   {/* <Card.Img
                         variant="top"
                         src={item.image_id}
@@ -49,13 +55,13 @@ export class Profile extends Component {
                     {/* <Card.Text> Metropolitan Museum of art</Card.Text> */}
                     <Card.Text>
                       {" "}
-                      you should choose from Collections page your favorite paintings
+                      you should choose from Collections page your favorite
+                      paintings
                     </Card.Text>
                   </Card.Body>
                 </Card>
               </div>
             </div>
-            
           </div>
         ) : (
           <div>
@@ -64,7 +70,7 @@ export class Profile extends Component {
               return (
                 <div>
                   <div id="profileDiv">
-                    <Card style={{ width: "25rem" }}>
+                    <Card style={{ width: "22rem" }}>
                       <Card.Img
                         variant="top"
                         src={item.image_id}
@@ -94,17 +100,18 @@ export class Profile extends Component {
                     /> */}
                 <Card.Body>
                   <Card.Title>Event</Card.Title>
-                  <Card.Text>you should choose from Event page your event</Card.Text>
+                  <Card.Text>
+                    you should choose from Event page your event
+                  </Card.Text>
                   <Card.Text className="event_description">
                     {" "}
-                    Date Of Event: didn't set 
+                    Date Of Event: didn't set
                   </Card.Text>
 
                   <Card.Title>Ticket Price : didn't set </Card.Title>
                 </Card.Body>
               </Card>
             </div>
-            
           </div>
         ) : (
           <div>
