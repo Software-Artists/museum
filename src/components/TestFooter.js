@@ -16,9 +16,6 @@ export class TestFooter extends Component {
           <h2>SIGN UP TO EMAILS</h2>
 
           <div className="signFooter ">
-            <label id="newsletter-label" for="email">
-              Email address
-            </label>
             <input
               type="email"
               id="email"
@@ -68,32 +65,42 @@ export class TestFooter extends Component {
           <p id="copyRights">
             &copy;2021 Liza Museum Arts. All rights reserved
           </p>
+          <div id="allquick">
+            <span id="quickLinks">
+              <p
+                style={{
+                  marginLeft: "85px",
+                }}
+              >
+                Quick Links
+              </p>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/Collections">Collections</Link>
+                </li>
+                <li>
+                  <Link to="/Event">Event</Link>
+                </li>
+              </ul>
+            </span>
+            <span id="quickLinks2">
+              <ul>
+                <li>
+                  <Link to="/Aboutus">About us</Link>
+                </li>
+                <li>
+                  <Link to="/Feedback">Feedback</Link>
+                </li>
 
-          <div id="quickLinks">
-            <p>Quick Links</p>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/Collections">Collections</Link>
-              </li>
-              <li>
-                <Link to="/Event">Event</Link>
-              </li>
-              <li>
-                <Link to="/Aboutus">About us</Link>
-              </li>
-              <li>
-                <Link to="/Feedback">Feedback</Link>
-              </li>
-
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-            </ul>
+                <li>
+                  <Link to="/profile">Profile</Link>
+                </li>
+              </ul>
+            </span>
           </div>
-
           <div id="contactDiv">
             <font> Get in touch via the channels below, or by emailing </font>{" "}
             <font color="#a5773a"> contact@liza.com</font>{" "}
