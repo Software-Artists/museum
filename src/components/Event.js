@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "../Style/Event.css";
+import axios from "axios";
 // import Profile from "./Profile";
 import Swal from "sweetalert2";
 // npm install sweetalert2
@@ -14,26 +15,37 @@ export class Event extends Component {
     };
   }
 
-  handelClick = async (e) => {
+  handelClick = async (
+    
+    name,
+    event_description,
+    event_description_image,
+    date,
+    ticket_price
+  ) => {
+   
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "Event added to your profile",
+      title: "added to favorite",
       showConfirmButton: false,
       timer: 1500,
     });
-    const y = e.target.childNodes[0].parentElement.attributes[0].nodeValue;
-
-    let filteredEventArray = [];
-    filteredEventArray = this.props.museumData.find((value) => y === value.id);
-
-    await this.state.NewArray.push(filteredEventArray);
-    // console.log(this.props.museumData, "museumData");
-    // console.log(filteredEventArray, "filteredEventArray");
-    // console.log(this.state.NewArray, "NewArray");
-    // console.log(y, "yyyyyyyy");
-    // console.log(this.props.museumData[0].id, "NewArray");
-    await this.props.handel(this.state.NewArray);
+    const requestBody = {
+      name: name,
+      event_description: event_description,
+      event_description_image: event_description_image,
+      date: date,
+      ticket_price: ticket_price,
+    };
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/event`, requestBody)
+      .then(() => {
+        console.log("addedevent");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
   };
 
   render() {
@@ -41,26 +53,32 @@ export class Event extends Component {
       <div className="div">
         {this.props.museumData.slice(0, 7).map((value) => {
           return (
-            
             <div className="flex-container">
-              
-            
+              <div className="body_Event">
+                <Card.Body>
+                  <Card.Title>{value.name}</Card.Title>
+                  <br />
+                  <Card.Text className="event_description">
+                    {value.event_description}
+                  </Card.Text>
 
-              <div  className="body_Event">
-                <Card.Body >
-                  <Card.Title >{value.name}</Card.Title>
-                  <br/>
-                  <Card.Text className="event_description">{value.event_description}</Card.Text>
-                  
-                  <Card.Text className="event_description1"> Date Of Event: {value.date}</Card.Text>
+                  <Card.Text className="event_description1">
+                    {" "}
+                    Date Of Event: {value.date}
+                  </Card.Text>
 
                   <Card.Title>Ticket Price : {value.ticket_price}</Card.Title>
-                  
-                 
 
                   <Button
                     alt={value.id}
-                    onClick={this.handelClick}
+                  
+                    onClick={() => this.handelClick(
+                      value.name,
+                      value.event_description,
+                      value.event_description_image,
+                      value.date,
+                      value.ticket_price
+                    )}
                     variant="primary"
                   >
                     Join The Event
@@ -68,9 +86,12 @@ export class Event extends Component {
                 </Card.Body>
               </div>
               <div className="img_Event">
-                <Card.Img className="img" variant="top" src={value.event_description_image} />
+                <Card.Img
+                  className="img"
+                  variant="top"
+                  src={value.event_description_image}
+                />
               </div>
-              
             </div>
           );
         })}

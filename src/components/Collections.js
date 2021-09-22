@@ -79,7 +79,7 @@ export class Collections extends Component {
     });
   };
 
-  addingToFav = async (e) => {
+  addingToFav = async (name, location, title, image_id) => {
     Swal.fire({
       position: "center",
       icon: "success",
@@ -87,33 +87,23 @@ export class Collections extends Component {
       showConfirmButton: false,
       timer: 1500,
     });
-
-    let filteredFavArray = [];
-    await this.setState({
-      favItem: e.target.name,
-    });
-
-    filteredFavArray = this.state.filterMuseumData.find(
-      (value) => value.image_id === this.state.favItem
-    );
-
-    this.state.allFilteredFavArray.push(filteredFavArray);
-
-    this.setState({
-      addToFavorite: this.state.allFilteredFavArray,
-    });
-
-    this.props.handelPassingFav(this.state.addToFavorite);
+    const requestBody = {
+      name: name,
+      location: location,
+      title: title,
+      image_id: image_id,
+    };
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/paints`, requestBody)
+      .then(() => {
+        console.log("addedPaints");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
 
     // ********************************************************************
-    <div class="hover14 column">
-      <div>
-        <figure>
-          <img src="https://picsum.photos/300/200?image=244" />
-        </figure>
-        <span>Hover</span>
-      </div>
-    </div>;
+    
 
     // ********************************************************************
   };
@@ -178,7 +168,14 @@ export class Collections extends Component {
                     <Card.Text> {item.location}</Card.Text>
                     <Button
                       variant="secondary"
-                      onClick={this.addingToFav}
+                      onClick={() => {
+                        this.addingToFav(
+                          item.name,
+                          item.location,
+                          item.title,
+                          item.image_id
+                        );
+                      }}
                       name={item.image_id}
                       id="collectionButton"
                     >
