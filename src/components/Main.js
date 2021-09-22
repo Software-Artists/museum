@@ -16,7 +16,21 @@ export class Main extends Component {
       loader: false,
     };
   }
+
+  
   render() {
+    let arr2 = [];
+    let arr1 = [];
+    arr1.push(...this.props.paintingsData.slice(0, 9));
+
+    for (var i = 0; i < arr1.length; i++) {
+      let rand = Math.floor(Math.random() * arr1.length);
+      if (arr2.includes(arr1[rand])) {
+        i--;
+      } else {
+        arr2.push(arr1[rand]);
+      }
+    }
     return (
       <>
         {this.props.loader ? (
@@ -53,38 +67,35 @@ export class Main extends Component {
               }}
             >
               <Row xs={1} md={3} className="g-4">
-                {this.props.paintingsData.slice(0, 6).map((element) => {
+                {arr2.map((element) => {
                   return (
-                    <figure>
-                      <div id="paintingHomeDiv">
-                        <Card
-                          style={{
-                            width: "18rem",
+                    <div id="paintingHomeDiv">
+                      <Card
+                        style={{
+                          width: "10rem",
 
-                            margin: "50px",
+                          margin: "50px",
+                        }}
+                      >
+                        <Card.Body
+                          style={{
+                            color: "black",
+                            padding: "0",
                           }}
                         >
-                          <Card.Body
-                            style={{
-                              color: "black",
-                              padding: "0",
-                            }}
-                          >
-                            <Card.Img
-                              id="imageHome"
-                              variant="top"
-                              src={element.image_id}
-                              alt={element.description_image1}
-                            />
-                          </Card.Body>
-                        </Card>
-                      </div>
-                    </figure>
+                          <Card.Img
+                            id="imageHome"
+                            variant="top"
+                            src={element.image_id}
+                            alt={element.description_image1}
+                          />
+                        </Card.Body>
+                      </Card>
+                    </div>
                   );
                 })}
               </Row>
             </div>
-          
           </>
         )}
       </>
