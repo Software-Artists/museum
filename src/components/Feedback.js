@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import FeedbackForm from "./feedbackForm";
 import "../css/feedback.css";
-
 class FeedBackPage extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class FeedBackPage extends React.Component {
       feedbacks: [],
     };
   }
-  //========================= this function calls the render fun. first then excutes.
+  //========================= this function calls the render fun. first then executes.
   componentDidMount = () => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/feedback`)

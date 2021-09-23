@@ -75,15 +75,10 @@ export class Profile extends Component {
                     marginRight: "88px",
                   }}
                 >
-                  {/* <Card.Img
-                        variant="top"
-                        src={item.image_id}
-                        alt="paint image"
-                        id="profilePaintingImage"
-                      /> */}
+                
                   <Card.Body>
                     <Card.Title> favorite paintings</Card.Title>
-                    {/* <Card.Text> Metropolitan Museum of art</Card.Text> */}
+                
                     <Card.Text>
                       {" "}
                       you should choose from Collections page your favorite
@@ -131,10 +126,7 @@ export class Profile extends Component {
             <h3 className="EventTitle"> Selected Event</h3>
             <div class="d-flex justify-content-center">
               <Card style={{ width: "90%" }}>
-                {/* <Card.Img
-                      variant="top"
-                      src={value.event_description_image}
-                    /> */}
+               
                 <Card.Body>
                   <Card.Title>Event</Card.Title>
                   <Card.Text>

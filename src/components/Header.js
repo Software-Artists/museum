@@ -1,67 +1,42 @@
-import React from "react";
-import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../Style/header.css";
-// import ButtonGroup from 'react-bootstrap/ButtonGroup';
-// import NavLink from "react-bootstrap/NavLink";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
-import { withAuth0 } from "@auth0/auth0-react";
-
-class Header extends React.Component {
+import LogoImage from "../components/imgs/museumLogo.png";
+export class TestHeader extends Component {
   render() {
-    const isAuth = this.props.auth0.isAuthenticated;
     return (
-      <>
-        <Navbar bg="dark" variant="dark" fixed="top">
-          <Container>
-            <Navbar.Brand>
-              {" "}
-              <Link to="/">Home</Link>
-            </Navbar.Brand>
-            <Nav variant="pills">
-              <NavItem>
-                {" "}
-                <Link to="/">Home</Link>{" "}
-              </NavItem>
-              <NavItem>
-                {" "}
-                <Link to="/Collections">Collections</Link>{" "}
-              </NavItem>
-              <NavItem>
-                {" "}
-                <Link to="/Event">Event</Link>{" "}
-              </NavItem>
-              <NavItem>
-                {" "}
-                <Link to="/profile">profile</Link>{" "}
-              </NavItem>
-              <NavItem>
-                {" "}
-                <Link to="/Aboutus">Aboutus</Link>{" "}
-              </NavItem>
-              <NavItem>
-                {" "}
-                <Link to="/Feedback">Feedback</Link>{" "}
-              </NavItem>
-            </Nav>
-          </Container>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            {isAuth && (
-              <NavItem style={{ paddingLeft: "1%" }}>
-                {" "}
-                <Link to="/profile">Profile </Link>
-              </NavItem>
-            )}
+      <div>
+        <header>
+          <img id="logiImage" src={LogoImage} alt="Logo Image" />
+      
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/Collections">Collections</Link>
+              </li>
+              <li>
+                <Link to="/Event">Event</Link>
+              </li>
 
-            {isAuth ? <LogoutButton /> : <LoginButton />}
-          </Navbar>
-        </Navbar>
+              <li class="dropdown">
+                <Link to="/Aboutus">About us</Link>
 
-        <br />
-      </>
+                <div class="dropdown-content">
+                  <Link to="/Aboutus">About The Team</Link>
+                  <Link to="/Feedback">Feedback</Link>
+                </div>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
     );
   }
 }
 
-export default withAuth0(Header);
+export default TestHeader;
