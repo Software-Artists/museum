@@ -1,9 +1,6 @@
 import React from "react";
 import Main from "./components/Main";
-// import logo from './logo.svg';
 import "./App.css";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Collections from "./components/Collections";
 import Profile from "./components/Profile";
@@ -11,11 +8,8 @@ import Event from "./components/Event";
 import Aboutus from "./components/Aboutus";
 import Feedback from "./components/Feedback";
 import axios from "axios";
-// import FeedbackForm from "./components/feedbackForm";
-
-import TestHeader from "./components/TestHeader";
-import TestFooter from "./components/TestFooter";
-// import Loader from './components/Loader';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,8 +46,6 @@ class App extends React.Component {
     });
   };
 
-
-
   handelPassingFav = (test) => {
     this.setState({
       passingData: test,
@@ -65,7 +57,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <TestHeader />
+          <Header />
           <Switch>
             <Route exact path="/">
               <Main
@@ -100,7 +92,7 @@ class App extends React.Component {
               />
             </Route>
           </Switch>
-          <TestFooter />
+          <Footer />
         </Router>
       </div>
     );

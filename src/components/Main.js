@@ -3,12 +3,9 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-// import intro from "../components/vid/intro.mp4";
-// import ReactPlayer from "react-player";
 import "../Style/video.css";
 import Loader from "./Loader";
 import "../Style/home.css";
-
 export class Main extends Component {
   constructor(props) {
     super(props);
@@ -105,21 +102,3 @@ export class Main extends Component {
 
 export default Main;
 
-// <div className="player-wrapper">
-// <ReactPlayer
-//   playing
-//   url={intro}
-//   height="100%"
-//   width="100%"
-//   muted="false"
-//   loop="true"
-// />
-
-// <div class="overlay">
-
-//   <h2>
-//     Liza Museum Arts <br /> Enjoy Seeing The Most Famous Museums
-//     Around The World
-//   </h2>
-// </div>
-// </div>

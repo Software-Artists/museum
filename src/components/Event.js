@@ -3,9 +3,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "../Style/Event.css";
 import axios from "axios";
-// import Profile from "./Profile";
 import Swal from "sweetalert2";
-// npm install sweetalert2
+
 export class Event extends Component {
   constructor(props) {
     super(props);

@@ -1,21 +1,10 @@
 import React from "react";
-// import Card from "react-bootstrap/Card";
-// import CardGroup from "react-bootstrap/CardGroup";
 import "../Style/Aboutus.css";
-// import Image1 from "../components/teamimg/h.jpg";
-// import Image2 from "../components/teamimg/omar.jpeg";
-// import Image3 from "../components/teamimg/issapic.png";
-// import Image4 from "../components/teamimg/nashat.jpg";
-// import Image5 from "../components/teamimg/qutada.jpg";
-// import Image6 from "../components/teamimg/ahmad.jpg";
-// import body from "../components/teamimg/pic.jpg";
 import firstimage from "../components/teamimg/firstimage.jpg";
 import secondimage from "../components/teamimg/secondimage.jpg";
 import first from "../components/teamimg/first.jpg";
 import sec from "../components/teamimg/sec.jpg";
 import Carousel from "react-bootstrap/Carousel";
-
-// import { Link } from "react-router-dom";
 
 class Aboutus extends React.Component {
   render() {

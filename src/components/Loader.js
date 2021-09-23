@@ -1,9 +1,7 @@
 import React from "react";
-
 import { css } from "@emotion/react";
 import { RingLoader } from "react-spinners";
 
-// Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
   display: block;
   margin: 150px 50% 100px 45%;
