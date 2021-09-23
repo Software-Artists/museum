@@ -19,8 +19,8 @@ export class Main extends Component {
 
   
   render() {
-    let arr2 = [];
     let arr1 = [];
+    let arr2 = [];
     arr1.push(...this.props.paintingsData.slice(0, 9));
 
     for (var i = 0; i < arr1.length; i++) {
