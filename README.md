@@ -35,3 +35,5 @@
 ## Schema Diagram: Coming Soon.
 
 ### The schema and the properties will be added and drown in the next days
+
+https://objective-morse-eb4b96.netlify.app/
